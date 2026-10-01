@@ -1,5 +1,7 @@
 # SEO Page Auditor — "Can AI read my page, and can search find it?"
 
+[![CI](https://github.com/arjunkshah12345-hash/seo-page-auditor/actions/workflows/ci.yml/badge.svg)](https://github.com/arjunkshah12345-hash/seo-page-auditor/actions/workflows/ci.yml)
+
 **AI Search & Readability Auditor built on [TinyFish](https://www.tinyfish.ai).**
 Give it any live URL (plus, optionally, the search query you care about) and it tells you:
 
