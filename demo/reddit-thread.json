@@ -1,0 +1,358 @@
+{
+  "url": "https://www.reddit.com/r/AI_Agents/comments/1slc6ed/we_shipped_4_web_apis_for_ai_agents_today_search/",
+  "target_query": "tinyfish search and fetch",
+  "scores": {
+    "ai_readability_score": 21,
+    "ai_visibility_score": 0,
+    "overall_score": 13,
+    "verdict": "Effectively invisible to AI search: most AI tools cannot read this page or never see it. Start with the critical fixes.",
+    "weights": {
+      "readability": 0.6,
+      "visibility": 0.4
+    },
+    "projected_after_fixes": {
+      "overall_score": 74,
+      "ai_readability_score": 75,
+      "ai_visibility_score": 73
+    }
+  },
+  "findings": [
+    {
+      "id": "robots-blocks-ai",
+      "severity": "critical",
+      "area": "access",
+      "title": "robots.txt blocks AI crawlers: GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-Web, anthropic-ai, PerplexityBot, Google-Extended, Bytespider, CCBot, Applebot-Extended, meta-externalagent",
+      "evidence": "robots.txt disallows this path for GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-Web, anthropic-ai, PerplexityBot, Google-Extended, Bytespider, CCBot, Applebot-Extended, meta-externalagent. Those systems will never see the page, so AI answer engines cannot cite or recommend it. Matching rules: \n\n",
+      "fix": "Edit robots.txt and remove/replace the Disallow rules for these user agents on this path. To allow all AI crawlers explicitly:\n```\nUser-agent: GPTBot\nAllow: /\nUser-agent: OAI-SearchBot\nAllow: /\nUser-agent: ChatGPT-User\nAllow: /\nUser-agent: ClaudeBot\nAllow: /\nUser-agent: Claude-Web\nAllow: /\n```",
+      "source": "origin HTTP"
+    },
+    {
+      "id": "js-only-rendering",
+      "severity": "critical",
+      "area": "readability",
+      "title": "Content only renders via JavaScript",
+      "evidence": "Raw server HTML contains only 0 content tags (<p>/<h>/<li>), while TinyFish Fetch — a full browser — extracted 463 words. Crawlers that don't execute JS (and many AI fetchers) see an empty shell.",
+      "fix": "Serve the primary content in the initial HTML (SSR/SSG or pre-rendering). Verify: curl -s <url> | grep -c '<p' returns the real paragraph count.",
+      "source": "origin HTTP + TinyFish Fetch"
+    },
+    {
+      "id": "render-blockers",
+      "severity": "high",
+      "area": "access",
+      "title": "Reading blocked by: Network security block by Reddit - 'You've been blocked by network security', Requires login to access Reddit content",
+      "evidence": "The browsing agent hit these walls before content: Network security block by Reddit - 'You've been blocked by network security', Requires login to access Reddit content.",
+      "fix": "Remove or defer the interstitial (cookie/consent/paywall) for first-time crawlers, or at minimum make content reachable without dismissal.",
+      "source": "TinyFish Agent"
+    },
+    {
+      "id": "no-jsonld",
+      "severity": "high",
+      "area": "structure",
+      "title": "No structured data (JSON-LD)",
+      "evidence": "Zero application/ld+json blocks in the raw HTML — answer engines and AI search rely on schema to classify and cite pages reliably.",
+      "fix": "Add this JSON-LD block inside <head> (pre-filled with this page's own data):\n<script type=\"application/ld+json\">\n{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"WebPage\",\n  \"name\": \"Reddit\",\n  \"description\": \"One-sentence page description\",\n  \"url\": \"https://www.reddit.com/r/AI_Agents/comments/1slc6ed/we_shipped_4_web_apis_for_ai_agents_today_search/\",\n  \"isPartOf\": {\n    \"@type\": \"WebSite\",\n    \"name\": \"reddit.com\",\n    \"url\": \"https://reddit.com\"\n  },\n  \"publisher\": {\n    \"@type\": \"Organization\",\n    \"name\": \"reddit.com\"\n  }\n}\n</script>\nIf the page is an article/product, change @type accordingly (Article, Product, …) and add sameAs links to the \"reddit.com\" social profiles.",
+      "source": "origin HTTP"
+    },
+    {
+      "id": "missing-description",
+      "severity": "high",
+      "area": "visibility",
+      "title": "No meta description / og:description",
+      "evidence": "Fetch found no description — search engines will improvise snippets and AI answer engines lose the page's self-description.",
+      "fix": "Add to <head>: <meta name=\"description\" content=\"One sentence (140–160 chars) stating what this page answers, including the primary keyword.\"> and mirror it in og:description.",
+      "source": "TinyFish Fetch"
+    },
+    {
+      "id": "not-ranked",
+      "severity": "high",
+      "area": "visibility",
+      "title": "Not in top-10 for “tinyfish search and fetch”",
+      "evidence": "TinyFish Search top-10 for “tinyfish search and fetch” is dominated by: www.tinyfish.ai (#1), github.com (#2), www.tinyfish.ai (#4), www.tinyfish.ai (#5). This page does not appear — AI search engines inherit this ordering when citing sources.",
+      "fix": "Align the page to the query: put “tinyfish search and fetch” (or a close variant) in the <title>, H1, first paragraph and one H2; add an FAQ section answering the question behind the query; then interlink to this page from your two highest-authority pages.",
+      "source": "TinyFish Search"
+    },
+    {
+      "id": "no-sitemap-declared",
+      "severity": "medium",
+      "area": "access",
+      "title": "robots.txt declares no sitemap",
+      "evidence": "No `Sitemap:` line in robots.txt — crawlers must discover URLs by links alone.",
+      "fix": "Add `Sitemap: https://reddit.com/sitemap.xml` to robots.txt (and make sure that sitemap exists and includes this URL).",
+      "source": "origin HTTP"
+    },
+    {
+      "id": "agent-js-required",
+      "severity": "medium",
+      "area": "readability",
+      "title": "Useful content requires JavaScript to render",
+      "evidence": "The browsing agent confirms content only appears after JS execution — full-browser fetchers cope, lighter AI fetchers and some search crawlers do not.",
+      "fix": "Pre-render the primary content server-side (SSR/SSG).",
+      "source": "TinyFish Agent"
+    },
+    {
+      "id": "agent-thin-render",
+      "severity": "medium",
+      "area": "readability",
+      "title": "Rendered page is text-light",
+      "evidence": "Agent estimated ~0 visible characters on the rendered page.",
+      "fix": "Add substantive text content: answer paragraph, FAQ, specs/details in static HTML.",
+      "source": "TinyFish Agent"
+    },
+    {
+      "id": "flat-structure",
+      "severity": "medium",
+      "area": "structure",
+      "title": "Long page with zero H2 sections",
+      "evidence": "463 words but no <h2> anywhere in the extracted HTML — answer engines chunk pages by headings when citing sources.",
+      "fix": "Split the content into 3–6 sections with descriptive <h2> headings phrased as the questions users ask.",
+      "source": "TinyFish Fetch"
+    },
+    {
+      "id": "title-missing-query-terms",
+      "severity": "medium",
+      "area": "visibility",
+      "title": "Title/URL miss part of the target query",
+      "evidence": "Query terms absent from the page's title and URL: fetch, tinyfish.",
+      "fix": "Work these terms into the <title> and H1 naturally (e.g. “… fetch, tinyfish …”).",
+      "source": "TinyFish Search"
+    },
+    {
+      "id": "weak-title",
+      "severity": "medium",
+      "area": "visibility",
+      "title": "Title length outside the display window",
+      "evidence": "Title is 88 chars: “We shipped 4 web APIs for AI agents today - Search, Fetch, Browser, Agent. : r/AI_Agents”. Search snippets truncate around 60 chars.",
+      "fix": "Rewrite to 50–60 chars, front-load the primary keyword, keep the brand suffix: e.g. “<Primary Keyword> — <Brand>”.",
+      "source": "TinyFish Fetch"
+    },
+    {
+      "id": "multi-h1",
+      "severity": "low",
+      "area": "structure",
+      "title": "2 H1 tags on one page",
+      "evidence": "Extraction found 2 <h1> elements; a single H1 makes the page topic unambiguous.",
+      "fix": "Demote all but the main headline to <h2>.",
+      "source": "TinyFish Fetch"
+    },
+    {
+      "id": "no-canonical",
+      "severity": "low",
+      "area": "structure",
+      "title": "No canonical link",
+      "evidence": "No <link rel=\"canonical\"> in the raw HTML — duplicate URLs (params, trailing slashes) can split ranking signals.",
+      "fix": "Add to <head>: <link rel=\"canonical\" href=\"https://www.reddit.com/r/AI_Agents/comments/1slc6ed/we_shipped_4_web_apis_for_ai_agents_today_search/\">.",
+      "source": "origin HTTP"
+    },
+    {
+      "id": "content-depth-gap",
+      "severity": "low",
+      "area": "visibility",
+      "title": "Fewer content sections than the pages outranking it",
+      "evidence": "The top-ranked pages for 'tinyfish search and fetch' average 5 H2 sections; this page has 0. Sections are how answer engines chunk and cite a page.",
+      "fix": "Split the content into ~5 question-titled H2 sections, each answerable standalone.",
+      "source": "TinyFish Search + Fetch (competitor benchmark)"
+    },
+    {
+      "id": "missing-og",
+      "severity": "low",
+      "area": "visibility",
+      "title": "Incomplete Open Graph tags",
+      "evidence": "og:title=MISSING, og:description=MISSING — previews in social/chat surfaces (a growing AI-referral channel) render blank.",
+      "fix": "Add og:title, og:description, og:image, og:url mirroring the <title> and meta description.",
+      "source": "origin HTTP"
+    },
+    {
+      "id": "agent-understood",
+      "severity": "info",
+      "area": "readability",
+      "title": "A browsing AI understands the page",
+      "evidence": "Agent's one-line read: “A Reddit post in r/AI_Agents about TinyShip/ TinyFish announcing the release of 4 web APIs (Search, Fetch, Browser, and Agent) designed for…”. Key facts it extracted: TinyFish shipped 4 web APIs for AI agents: Search, Fetch, Browser, and Agent; These APIs solve common building-block problems for AI agent development; The Search and Fetch APIs were later made free for anyone building agents",
+      "fix": "Keep the opening screen this clear; make sure the key facts stay in static text.",
+      "source": "TinyFish Agent"
+    }
+  ],
+  "readability": {
+    "md_chars": 3195,
+    "md_words": 463,
+    "md_lexical_ratio": 0.687,
+    "title": "We shipped 4 web APIs for AI agents today - Search, Fetch, Browser, Agent. : r/AI_Agents",
+    "description": null,
+    "language": "en",
+    "author": null,
+    "published_date": "2026-04-14T15:34:42.861Z",
+    "h1_count": 2,
+    "h2_count": 0,
+    "h3_count": 0,
+    "paragraphs": 32,
+    "lists": 0,
+    "tables": 0,
+    "semantic_tags": [
+      "main",
+      "section",
+      "summary",
+      "details"
+    ],
+    "looks_empty": false,
+    "looks_truncated": false,
+    "repeated_boilerplate_ratio": 0.0,
+    "stat_sentences": 3,
+    "question_headings": [],
+    "longest_paragraph_words": 105,
+    "errors": []
+  },
+  "origin": {
+    "status": 200,
+    "final_url": "https://www.reddit.com/r/AI_Agents/comments/1slc6ed/we_shipped_4_web_apis_for_ai_agents_today_search/",
+    "html_bytes": 8475,
+    "title": "Reddit",
+    "title_len": 6,
+    "meta_description": null,
+    "meta_description_len": 0,
+    "canonical": null,
+    "robots_meta": null,
+    "og_title": null,
+    "og_description": null,
+    "og_image": null,
+    "jsonld_types": [],
+    "jsonld_parse_error": null,
+    "jsonld_blocks": 0,
+    "h1_count": 0,
+    "h2_count": 0,
+    "img_count": 0,
+    "img_missing_alt": 0,
+    "hreflang_count": 0,
+    "raw_content_tags": 0,
+    "redirect": false,
+    "content_type": "text/html",
+    "ua_retried": false
+  },
+  "robots": {
+    "exists": true,
+    "status": 200,
+    "ai_blocked": [
+      "GPTBot",
+      "OAI-SearchBot",
+      "ChatGPT-User",
+      "ClaudeBot",
+      "Claude-Web",
+      "anthropic-ai",
+      "PerplexityBot",
+      "Google-Extended",
+      "Bytespider",
+      "CCBot",
+      "Applebot-Extended",
+      "meta-externalagent"
+    ],
+    "ai_allowed": [],
+    "search_blocked": [
+      "Googlebot",
+      "Bingbot"
+    ],
+    "sitemap_urls": [],
+    "raw_excerpts": {}
+  },
+  "llms_txt": {
+    "exists": true,
+    "status": 200,
+    "url": "https://www.reddit.com/llms.txt",
+    "bytes": 8405,
+    "sections": 0,
+    "links": 0
+  },
+  "visibility": {
+    "url": "https://www.reddit.com/r/AI_Agents/comments/1slc6ed/we_shipped_4_web_apis_for_ai_agents_today_search/",
+    "target_query": "tinyfish search and fetch",
+    "domain": "www.reddit.com",
+    "registrable_domain": "reddit.com",
+    "brand": "reddit",
+    "probes": [
+      "VariantProbe(query='tinyfish search and fetch', total_results=10, page_rank=None, page_entry_title=None, page_entry_snippet=None, top_results=[{'position': 1, 'title': 'Search and Fetch are now FREE for every agent, ...', 'url': 'https://www.tinyfish.ai/blog/search-and-fetch-are-now-free-for-every-agent-everywhere', 'site_name': 'www.tinyfish.ai', 'snippet': 'TinyFish Web Search and Fetch are free. Free across every surface you already build on, balance. No monthly subscriptions, no minimum spend, ...'}, {'position': 2, 'title': 'TinyFish Cookbook', 'url': 'https://github.com/tinyfish-io/tinyfish-cookbook', 'site_name': 'github.com', 'snippet': 'Search and Fetch are now FREE. TinyFish Search and Fetch endpoints are now free for everyone with generous rate limits, no credit card required. Same key ...'}, {'position': 3, 'title': 'TinyFish Search + Fetch are free now — for anyone ...', 'url': 'https://www.reddit.com/r/AI_Agents/comments/1t3ob7y/tinyfish_search_fetch_are_free_now_for_anyone/', 'site_name': 'www.reddit.com', 'snippet': 'We made Search and Fetch free today. Search gives agents structured, real-time web results- our own index, not a third-party wrapper. Fetch is ...'}, {'position': 4, 'title': 'Pricing', 'url': 'https://www.tinyfish.ai/pricing', 'site_name': 'www.tinyfish.ai', 'snippet': 'Search and Fetch are free. Agent is $0.016 per step and Browser is $0.002 per minute, metered against Wallet funds. No plans, no monthly minimum.'}, {'position': 5, 'title': 'TinyFish — Web Infrastructure for AI Agents', 'url': 'https://www.tinyfish.ai/', 'site_name': 'www.tinyfish.ai', 'snippet': 'TinyFish provides enterprise infrastructure for AI web agents. Search the web, fetch clean content from any URL, run a real browser, and deploy agents. Search ...'}, {'position': 6, 'title': 'Web Search API for AI Agents', 'url': 'https://www.tinyfish.ai/search', 'site_name': 'www.tinyfish.ai', 'snippet': 'TinyFish Search is a web search API returning fresh, structured results from the live web in milliseconds. Free on every plan, built for AI agents.'}, {'position': 7, 'title': 'Fetch API - TinyFish Web Agent', 'url': 'https://docs.tinyfish.ai/fetch-api', 'site_name': 'docs.tinyfish.ai', 'snippet': 'The TinyFish Fetch API fetches web pages, renders JavaScript-heavy pages when needed, and returns clean extracted text in your preferred format.'}, {'position': 8, 'title': 'Free Web Search and Fetch API for AI Coding Agents', 'url': 'https://www.bitdoze.com/tinyfish-ai-agents-web-search/', 'site_name': 'www.bitdoze.com', 'snippet': 'TinyFish provides structured web search and clean page fetching through a single API key. Search and Fetch are free — no credit card, no trial ...'}, {'position': 9, 'title': 'TinyFish APIs Now Free: Fast Search and Fetch Results', 'url': 'https://www.linkedin.com/posts/arshgoyal_tinyfish-just-made-their-search-and-fetch-activity-7457111847813537792-azVU', 'site_name': 'www.linkedin.com', 'snippet': 'TinyFish just made their Search and Fetch APIs FREE! I plugged TinyFish Search and Fetch into Claude Code and ran a quick competitive ...'}, {'position': 10, 'title': 'Starting today, TinyFish Web Search and Fetch are free. For ...', 'url': 'https://www.facebook.com/brian.hanson1/videos/starting-today-tinyfish-web-search-and-fetch-are-freefor-every-dev-and-agent-acr/936100065927127/', 'site_name': 'www.facebook.com', 'snippet': 'This post announces that the free \"Web Search and Fetch\" service, developed by TinyFish, is now available to all AI agents. The video showcases ...'}])",
+      "VariantProbe(query='tinyfish search and fetch reddit', total_results=10, page_rank=2, page_entry_title='We shipped 4 web APIs for AI agents today - Search, Fetch ...', page_entry_snippet='TinyFish Search + Fetch are free now — for anyone building agents. 17 upvotes · 10 comments. TinyFish plugin for free web search & extract · r ...', top_results=[{'position': 1, 'title': 'We just made WEB Search and Fetch completely free', 'url': 'https://www.reddit.com/r/SideProject/comments/1t3lmwn/we_just_made_web_search_and_fetch_completely_free/', 'site_name': 'www.reddit.com', 'snippet': 'I work at TinyFish. We made two of our core API endpoints free today. No credit card, one sign-up, one key. Search: structured web results ...'}, {'position': 2, 'title': 'We shipped 4 web APIs for AI agents today - Search, Fetch ...', 'url': 'https://www.reddit.com/r/AI_Agents/comments/1slc6ed/we_shipped_4_web_apis_for_ai_agents_today_search/', 'site_name': 'www.reddit.com', 'snippet': 'TinyFish Search + Fetch are free now — for anyone building agents. 17 upvotes · 10 comments. TinyFish plugin for free web search & extract · r ...'}, {'position': 3, 'title': 'Search and Fetch are now FREE for every agent, ...', 'url': 'https://www.tinyfish.ai/blog/search-and-fetch-are-now-free-for-every-agent-everywhere', 'site_name': 'www.tinyfish.ai', 'snippet': 'Search and Fetch are now FREE for every agent, everywhere! Starting today, TinyFish Web Search and Fetch are free. Free for every developer.'}, {'position': 4, 'title': 'TinyFish Search and Fetch are now free. For every dev and ...', 'url': 'https://www.reddit.com/r/AIStartupAutomation/comments/1tcmieo/tinyfish_search_and_fetch_are_now_free_for_every/', 'site_name': 'www.reddit.com', 'snippet': 'TinyFish Search and Fetch are now free. For every dev and agent. No credit card. reddit.com. Open. Upvote 1. Downvote 0 Go to comments'}, {'position': 5, 'title': 'TinyFish APIs Now Free: Fast Search and Fetch Results', 'url': 'https://www.linkedin.com/posts/arshgoyal_tinyfish-just-made-their-search-and-fetch-activity-7457111847813537792-azVU', 'site_name': 'www.linkedin.com', 'snippet': 'TinyFish just made their Search and Fetch APIs FREE! I plugged TinyFish Search and Fetch into Claude Code and ran a quick competitive analysis.'}, {'position': 6, 'title': 'TinyFish Launches All in One Web API for AI Agents : r/aicuriosity', 'url': 'https://www.reddit.com/r/aicuriosity/comments/1sle2e5/tinyfish_launches_all_in_one_web_api_for_ai_agents/', 'site_name': 'www.reddit.com', 'snippet': 'It brings together four core capabilities under a single key search fetch browser and full agent actions. The whole stack runs in house instead ...'}, {'position': 7, 'title': 'New Tiny Fish AI Just Changed Everything!  : r/AISEOInsider', 'url': 'https://www.reddit.com/r/AISEOInsider/comments/1t79k5j/new_tiny_fish_ai_just_changed_everything/', 'site_name': 'www.reddit.com', 'snippet': 'Close search. Overview of Tiny Fish AI and its features. Clear search ... New Tiny Fish AI Just Changed Everything!. Play. Upvote 1'}, {'position': 8, 'title': 'I tested 4 AI web tools from one API key and ...', 'url': 'https://www.linkedin.com/posts/arshgoyal_i-tested-4-ai-web-tools-from-one-api-key-activity-7449854135098851328-OdIC', 'site_name': 'www.linkedin.com', 'snippet': 'TinyFish built search, fetch, browser, and agent, all in-house. with just one API key, one credit system and no stitching. I put all four to the ...'}, {'position': 9, 'title': 'TinyFish Search and Fetch are now free. For every dev and ...', 'url': 'https://www.reddit.com/r/automation/comments/1tcqu0a/tinyfish_search_and_fetch_are_now_free_for_every/', 'site_name': 'www.reddit.com', 'snippet': 'TinyFish Search and Fetch are now free. For every dev and agent. No credit card.'}, {'position': 10, 'title': 'Search API - TinyFish Web Agent', 'url': 'https://docs.tinyfish.ai/search-api', 'site_name': 'docs.tinyfish.ai', 'snippet': 'The TinyFish Search API lets you run web searches and get back structured results — titles, snippets, and URLs — ready for LLM consumption or programmatic use.'}])",
+      "VariantProbe(query='reddit', total_results=6, page_rank=None, page_entry_title=None, page_entry_snippet=None, top_results=[{'position': 1, 'title': 'Reddit - The heart of the internet', 'url': 'https://www.reddit.com/', 'site_name': 'www.reddit.com', 'snippet': 'Reddit is where millions of people gather for conversations about the things they care about, in over 100000 subreddit communities.'}, {'position': 2, 'title': 'Reddit', 'url': 'https://en.wikipedia.org/wiki/Reddit', 'site_name': 'en.wikipedia.org', 'snippet': 'Reddit is a proprietary American social news website, news aggregator, forum and social media platform. Registered users submit content to the site such as ...'}, {'position': 3, 'title': 'Reddit, Inc.', 'url': 'https://x.com/Reddit', 'site_name': 'x.com', 'snippet': \"Today, we shared Reddit's Q2'26 earnings results. A few highlights: Revenue: $805M (+61% YoY) Weekly Active Uniques: 514M+ (+24% YoY) 8th consecutive quarter of ...\"}, {'position': 4, 'title': 'Reddit - Apps on Google Play', 'url': 'https://play.google.com/store/apps/details?id=com.reddit.frontpage&hl=en_US', 'site_name': 'play.google.com', 'snippet': 'Welcome to Reddit, the heart of the internet. Reddit is the most diverse place on the web, where people from all over the world come together to share passions, ...'}, {'position': 5, 'title': 'Reddit Inc Homepage', 'url': 'https://redditinc.com/', 'site_name': 'redditinc.com', 'snippet': \"Reddit is home to thousands of communities, endless conversation, and authentic human connection. Whether you're into breaking news, sports, TV fan theories, or ...\"}, {'position': 6, 'title': 'Reddit - App Store - Apple', 'url': 'https://apps.apple.com/us/app/reddit/id1064216828', 'site_name': 'apps.apple.com', 'snippet': 'Reddit is where millions of real people gather to talk, ask and debate across 100,000+ communities, from breaking news and sports to gaming, finance, ...'}])"
+    ],
+    "exact_rank": null,
+    "exact_snippet": null,
+    "competitors": [
+      {
+        "position": 1,
+        "title": "Search and Fetch are now FREE for every agent, ...",
+        "url": "https://www.tinyfish.ai/blog/search-and-fetch-are-now-free-for-every-agent-everywhere",
+        "site_name": "www.tinyfish.ai",
+        "snippet": "TinyFish Web Search and Fetch are free. Free across every surface you already build on, balance. No monthly subscriptions, no minimum spend, ..."
+      },
+      {
+        "position": 2,
+        "title": "TinyFish Cookbook",
+        "url": "https://github.com/tinyfish-io/tinyfish-cookbook",
+        "site_name": "github.com",
+        "snippet": "Search and Fetch are now FREE. TinyFish Search and Fetch endpoints are now free for everyone with generous rate limits, no credit card required. Same key ..."
+      },
+      {
+        "position": 4,
+        "title": "Pricing",
+        "url": "https://www.tinyfish.ai/pricing",
+        "site_name": "www.tinyfish.ai",
+        "snippet": "Search and Fetch are free. Agent is $0.016 per step and Browser is $0.002 per minute, metered against Wallet funds. No plans, no monthly minimum."
+      },
+      {
+        "position": 5,
+        "title": "TinyFish — Web Infrastructure for AI Agents",
+        "url": "https://www.tinyfish.ai/",
+        "site_name": "www.tinyfish.ai",
+        "snippet": "TinyFish provides enterprise infrastructure for AI web agents. Search the web, fetch clean content from any URL, run a real browser, and deploy agents. Search ..."
+      },
+      {
+        "position": 6,
+        "title": "Web Search API for AI Agents",
+        "url": "https://www.tinyfish.ai/search",
+        "site_name": "www.tinyfish.ai",
+        "snippet": "TinyFish Search is a web search API returning fresh, structured results from the live web in milliseconds. Free on every plan, built for AI agents."
+      }
+    ],
+    "brand_rank": null,
+    "brand_site_rank": 1,
+    "notes": [
+      "Page did not appear in the first page (top 10) of TinyFish results for the exact query."
+    ]
+  },
+  "browser_agent": {
+    "attempted": true,
+    "understood": true,
+    "summary": "A Reddit post in r/AI_Agents about TinyShip/ TinyFish announcing the release of 4 web APIs (Search, Fetch, Browser, and Agent) designed for AI agents.",
+    "key_facts": [
+      "TinyFish shipped 4 web APIs for AI agents: Search, Fetch, Browser, and Agent",
+      "These APIs solve common building-block problems for AI agent development",
+      "The Search and Fetch APIs were later made free for anyone building agents"
+    ],
+    "js_required": true,
+    "rendered_chars": 0,
+    "nav_links": 2,
+    "render_blockers": [
+      "Network security block by Reddit - 'You've been blocked by network security'",
+      "Requires login to access Reddit content"
+    ],
+    "run_error": null
+  },
+  "competitor_benchmarks": [
+    {
+      "url": "https://www.tinyfish.ai/blog/search-and-fetch-are-now-free-for-every-agent-everywhere",
+      "position": 1,
+      "title": "Search and Fetch are now FREE for every agent, ...",
+      "benchmark": {
+        "words": 747,
+        "h2": 5,
+        "has_faq_schema": false
+      }
+    },
+    {
+      "url": "https://github.com/tinyfish-io/tinyfish-cookbook",
+      "position": 2,
+      "title": "TinyFish Cookbook",
+      "benchmark": {
+        "words": 1614,
+        "h2": 17,
+        "has_faq_schema": false
+      }
+    }
+  ]
+}

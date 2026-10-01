@@ -1,0 +1,230 @@
+{
+  "url": "https://www.tinyfish.ai/blog/production-grade-web-fetching-for-ai-agents",
+  "target_query": "production-grade web fetching for AI agents",
+  "scores": {
+    "ai_readability_score": 95,
+    "ai_visibility_score": 100,
+    "overall_score": 97,
+    "verdict": "AI-ready: readable by AI tools and visible in search. Keep it fresh.",
+    "weights": {
+      "readability": 0.6,
+      "visibility": 0.4
+    },
+    "projected_after_fixes": {
+      "overall_score": 97,
+      "ai_readability_score": 95,
+      "ai_visibility_score": 100
+    }
+  },
+  "findings": [
+    {
+      "id": "no-h1",
+      "severity": "medium",
+      "area": "structure",
+      "title": "No H1 survives extraction",
+      "evidence": "The extracted HTML contains no <h1> — answer engines use it to anchor what the page is about.",
+      "fix": "Make the page headline an <h1> containing the primary keyword, exactly once.",
+      "source": "TinyFish Fetch"
+    },
+    {
+      "id": "agent-understood",
+      "severity": "info",
+      "area": "readability",
+      "title": "A browsing AI understands the page",
+      "evidence": "Agent's one-line read: “A TinyFish blog post announcing the launch of the TinyFish Fetch API, a dual-layer web page fetching and content extraction service designe…”. Key facts it extracted: In testing across 200 URLs, over 10% of \"successful\" fetches returned nearly em…; The Fetch API is a dual-layer service that renders URLs via Chromium, extracts …; The article compares Fetch API with competing tools including Exa, Firecrawl, a…",
+      "fix": "Keep the opening screen this clear; make sure the key facts stay in static text.",
+      "source": "TinyFish Agent"
+    },
+    {
+      "id": "ranked-top3",
+      "severity": "info",
+      "area": "visibility",
+      "title": "Ranks #2 for “production-grade web fetching for AI agents”",
+      "evidence": "Strong: position 2 for the target query. Protect it.",
+      "fix": "Keep this page fresh (update stats/dates) and watch the competitors listed in the report.",
+      "source": "TinyFish Search"
+    }
+  ],
+  "readability": {
+    "md_chars": 8999,
+    "md_words": 1302,
+    "md_lexical_ratio": 0.72,
+    "title": "Reliable Web Fetching for AI Agents | TinyFish Fetch API",
+    "description": "Over 10% of successful fetches return near-empty text. TinyFish Fetch API renders in Chromium and returns agent-ready Markdown, HTML, or JSON.",
+    "language": "en",
+    "author": "Chenlu Ji",
+    "published_date": "2026-04-14T13:00:00.000Z",
+    "h1_count": 0,
+    "h2_count": 9,
+    "h3_count": 4,
+    "paragraphs": 45,
+    "lists": 8,
+    "tables": 0,
+    "semantic_tags": [
+      "main",
+      "article",
+      "figure",
+      "summary",
+      "details"
+    ],
+    "looks_empty": false,
+    "looks_truncated": false,
+    "repeated_boilerplate_ratio": 0.0,
+    "stat_sentences": 2,
+    "question_headings": [
+      "Why Web Fetching Normally Breaks for Agents",
+      "How Fetch API Fixes It",
+      "Where Fetch Fits in the TinyFish Stack",
+      "What's Next"
+    ],
+    "longest_paragraph_words": 48,
+    "errors": []
+  },
+  "origin": {
+    "status": 200,
+    "final_url": "https://www.tinyfish.ai/blog/production-grade-web-fetching-for-ai-agents",
+    "html_bytes": 183650,
+    "title": "Reliable Web Fetching for AI Agents | TinyFish Fetch API | TinyFish Blog",
+    "title_len": 72,
+    "meta_description": "Over 10% of successful fetches return near-empty text. TinyFish Fetch API renders in Chromium and returns agent-ready Markdown, HTML, or JSON.",
+    "meta_description_len": 142,
+    "canonical": "https://www.tinyfish.ai/blog/production-grade-web-fetching-for-ai-agents",
+    "robots_meta": null,
+    "og_title": "Reliable Web Fetching for AI Agents | TinyFish Fetch API",
+    "og_description": "Over 10% of successful fetches return near-empty text. TinyFish Fetch API renders in Chromium and returns agent-ready Markdown, HTML, or JSON.",
+    "og_image": "https://cdn.sanity.io/images/nhc04xln/production/b007c931df59e69c8c8bdc94980781f451abbf0c-1920x1080.png?rect=0,36,1920,1008&amp;w=1200&amp;h=630",
+    "jsonld_types": [
+      "Organization",
+      "WebSite",
+      "WebPage",
+      "ImageObject",
+      "BreadcrumbList",
+      "BlogPosting",
+      "Person"
+    ],
+    "jsonld_parse_error": null,
+    "jsonld_blocks": 2,
+    "h1_count": 1,
+    "h2_count": 9,
+    "img_count": 11,
+    "img_missing_alt": 0,
+    "hreflang_count": 0,
+    "raw_content_tags": 128,
+    "redirect": false,
+    "content_type": "text/html; charset=utf-8",
+    "ua_retried": false
+  },
+  "robots": {
+    "exists": true,
+    "status": 200,
+    "ai_blocked": [],
+    "ai_allowed": [
+      "GPTBot",
+      "OAI-SearchBot",
+      "ChatGPT-User",
+      "ClaudeBot",
+      "Claude-Web",
+      "anthropic-ai",
+      "PerplexityBot",
+      "Google-Extended",
+      "Bytespider",
+      "CCBot",
+      "Applebot-Extended",
+      "meta-externalagent"
+    ],
+    "search_blocked": [],
+    "sitemap_urls": [
+      "https://www.tinyfish.ai/sitemap.xml"
+    ],
+    "raw_excerpts": {}
+  },
+  "llms_txt": {
+    "exists": true,
+    "status": 200,
+    "url": "https://www.tinyfish.ai/llms.txt",
+    "bytes": 34539,
+    "sections": 6,
+    "links": 135
+  },
+  "visibility": {
+    "url": "https://www.tinyfish.ai/blog/production-grade-web-fetching-for-ai-agents",
+    "target_query": "production-grade web fetching for AI agents",
+    "domain": "www.tinyfish.ai",
+    "registrable_domain": "tinyfish.ai",
+    "brand": "tinyfish",
+    "probes": [
+      "VariantProbe(query='production-grade web fetching for AI agents', total_results=10, page_rank=2, page_entry_title='Production-Grade Web Fetching for AI Agents', page_entry_snippet='Fetch API is a dual-layer web page fetching and content extraction service built for AI agents. It renders URLs through Chromium, extracts ...', top_results=[{'position': 1, 'title': 'We shipped 4 web APIs for AI agents today - Search, Fetch ...', 'url': 'https://www.reddit.com/r/AI_Agents/comments/1slc6ed/we_shipped_4_web_apis_for_ai_agents_today_search/', 'site_name': 'www.reddit.com', 'snippet': 'I Built a completely free tool that gives your AI agent web for free (fetch + search + crawl + Screenshot) for completely free, no API keys, ...'}, {'position': 2, 'title': 'Production-Grade Web Fetching for AI Agents', 'url': 'https://www.tinyfish.ai/blog/production-grade-web-fetching-for-ai-agents', 'site_name': 'www.tinyfish.ai', 'snippet': 'Fetch API is a dual-layer web page fetching and content extraction service built for AI agents. It renders URLs through Chromium, extracts ...'}, {'position': 3, 'title': 'Building Production-Grade AI Agents with MCP & A2A', 'url': 'https://dev.to/exploredataaiml/building-production-grade-ai-agents-with-mcp-a2a-a-guide-from-the-trenches-2m96', 'site_name': 'dev.to', 'snippet': 'This isn\\'t a high-level fluff piece about \"The Future of AI.\" This is a muddy-boots, code-heavy walkthrough of how I built a production-grade ...'}, {'position': 4, 'title': 'Production-Grade A.I. Agents MASTERCLASS', 'url': 'https://www.youtube.com/watch?v=upTlhKQbnsE&xstg=CAMSBhUD_LL2Hw%3D%3D', 'site_name': 'www.youtube.com', 'snippet': 'In this video we walk viewers through a production A.I. system involving the use of CrewAI, AgentOps, GCP, Docker, and Python.'}, {'position': 5, 'title': 'Agent 101: Launching production-grade agents at scale', 'url': 'https://nebius.com/blog/posts/launch-production-agents-at-scale', 'site_name': 'nebius.com', 'snippet': 'This article breaks down each piece and explains how to build reliable, production-grade AI agents for enterprise scale. ... Enable real-time web ...'}, {'position': 6, 'title': 'Web Search and Deep Research for AI Agents', 'url': 'https://www.firecrawl.dev/blog/deep-research-for-ai-agents', 'site_name': 'www.firecrawl.dev', 'snippet': 'Learn what web search and deep research mean for AI agents, why 2026 made both production-grade, and how to wire them into your stack with'}, {'position': 7, 'title': \"A dev's guide to production-ready AI agents\", 'url': 'https://cloud.google.com/blog/products/ai-machine-learning/a-devs-guide-to-production-ready-ai-agents', 'site_name': 'cloud.google.com', 'snippet': 'Our set of five guides offer practical frameworks and code samples anyone can adapt to their own projects to put agents into action now.'}, {'position': 8, 'title': 'Production-Ready AI Agents: What Your Framework Needs', 'url': 'https://www.diagrid.io/blog/building-production-ready-ai-agents-what-your-framework-needs', 'site_name': 'www.diagrid.io', 'snippet': 'Discover essential capabilities for building production-ready AI agentic workflows. Learn how frameworks address LLM limitations in ...'}, {'position': 9, 'title': 'Best Web Search APIs & MCPs for AI Agents 2026 - Vellum', 'url': 'https://www.vellum.ai/blog/best-web-search-apis-and-mcps-for-ai-agents', 'site_name': 'www.vellum.ai', 'snippet': 'Compare the top 5 web search APIs and MCPs for AI agents: Firecrawl, Brave Search, Exa, Perplexity Sonar, Parallel AI.'}, {'position': 10, 'title': 'Building AI Agents in 30 Minutes from Prototype to Production', 'url': 'https://medium.com/google-cloud/building-ai-agents-in-30-minutes-from-prototype-to-production-3d1eb54263a7', 'site_name': 'medium.com', 'snippet': 'In this article, we are going to explore how to build and deploy a production-ready AI agent from scratch using Agents CLI: an open-source ...'}])",
+      "VariantProbe(query='production-grade web fetching for AI agents tinyfish', total_results=0, page_rank=None, page_entry_title=None, page_entry_snippet=None, top_results=[])",
+      "VariantProbe(query='tinyfish', total_results=7, page_rank=None, page_entry_title=None, page_entry_snippet=None, top_results=[{'position': 1, 'title': 'TinyFish — Web Infrastructure for AI Agents', 'url': 'https://www.tinyfish.ai/', 'site_name': 'www.tinyfish.ai', 'snippet': 'TinyFish provides enterprise infrastructure for AI web agents. Run hundreds of websites simultaneously to navigate, authenticate, extract data, and automate ...'}, {'position': 2, 'title': 'TinyFish', 'url': 'https://www.linkedin.com/company/tinyfish-ai', 'site_name': 'www.linkedin.com', 'snippet': 'Put AI to work on the live web, with enterprise control. One platform for search, fetch, browser sessions, and autonomous web workflows.'}, {'position': 3, 'title': 'TinyFish', 'url': 'https://github.com/tinyfish-io', 'site_name': 'github.com', 'snippet': 'A collection of sample apps and recipes built with the TinyFish web agent. Open-source examples for you to learn & build!'}, {'position': 4, 'title': 'TinyFish AI Review - (2026) I Tested an AI Agent That Browses ...', 'url': 'https://www.youtube.com/watch?v=YDWNz2XzLTU', 'site_name': 'www.youtube.com', 'snippet': 'TinyFish AI Review - (2026) I Tested an AI Agent That Browses Websites and Delivers Results. @Daniel-Dann1.2K likes32K views3 months ago'}, {'position': 5, 'title': 'TinyFish (@Tiny_Fish) / X', 'url': 'https://x.com/Tiny_Fish?lang=en', 'site_name': 'x.com', 'snippet': 'TinyFish is the complete web infrastructure platform for AI agents — Web Agent, Web Search, Web Fetch, and Web Browser APIs'}, {'position': 6, 'title': 'TinyFish launches with $47 million to define the era of ...', 'url': 'https://www.businesswire.com/news/home/20250820555825/en/TinyFish-launches-with-%2447-million-to-define-the-era-of-Enterprise-Web-Agents', 'site_name': 'www.businesswire.com', 'snippet': 'TinyFish creates measurable business outcomes for recognizable brands and Fortune 500 companies across hospitality, transportation, and e- ...'}, {'position': 7, 'title': 'AI agent startup TinyFish raises $47 million in ICONIQ-led ...', 'url': 'https://www.reuters.com/technology/ai-agent-startup-tinyfish-raises-47-million-iconiq-led-round-2025-08-20/', 'site_name': 'www.reuters.com', 'snippet': 'Founded in 2024, TinyFish is building web-based agents to automate repetitive and complex online tasks for enterprises. Its technology ...'}])"
+    ],
+    "exact_rank": 2,
+    "exact_snippet": "Fetch API is a dual-layer web page fetching and content extraction service built for AI agents. It renders URLs through Chromium, extracts ...",
+    "competitors": [
+      {
+        "position": 1,
+        "title": "We shipped 4 web APIs for AI agents today - Search, Fetch ...",
+        "url": "https://www.reddit.com/r/AI_Agents/comments/1slc6ed/we_shipped_4_web_apis_for_ai_agents_today_search/",
+        "site_name": "www.reddit.com",
+        "snippet": "I Built a completely free tool that gives your AI agent web for free (fetch + search + crawl + Screenshot) for completely free, no API keys, ..."
+      },
+      {
+        "position": 3,
+        "title": "Building Production-Grade AI Agents with MCP & A2A",
+        "url": "https://dev.to/exploredataaiml/building-production-grade-ai-agents-with-mcp-a2a-a-guide-from-the-trenches-2m96",
+        "site_name": "dev.to",
+        "snippet": "This isn't a high-level fluff piece about \"The Future of AI.\" This is a muddy-boots, code-heavy walkthrough of how I built a production-grade ..."
+      },
+      {
+        "position": 4,
+        "title": "Production-Grade A.I. Agents MASTERCLASS",
+        "url": "https://www.youtube.com/watch?v=upTlhKQbnsE&xstg=CAMSBhUD_LL2Hw%3D%3D",
+        "site_name": "www.youtube.com",
+        "snippet": "In this video we walk viewers through a production A.I. system involving the use of CrewAI, AgentOps, GCP, Docker, and Python."
+      },
+      {
+        "position": 5,
+        "title": "Agent 101: Launching production-grade agents at scale",
+        "url": "https://nebius.com/blog/posts/launch-production-agents-at-scale",
+        "site_name": "nebius.com",
+        "snippet": "This article breaks down each piece and explains how to build reliable, production-grade AI agents for enterprise scale. ... Enable real-time web ..."
+      },
+      {
+        "position": 6,
+        "title": "Web Search and Deep Research for AI Agents",
+        "url": "https://www.firecrawl.dev/blog/deep-research-for-ai-agents",
+        "site_name": "www.firecrawl.dev",
+        "snippet": "Learn what web search and deep research mean for AI agents, why 2026 made both production-grade, and how to wire them into your stack with"
+      }
+    ],
+    "brand_rank": null,
+    "brand_site_rank": 1,
+    "notes": []
+  },
+  "browser_agent": {
+    "attempted": true,
+    "understood": true,
+    "summary": "A TinyFish blog post announcing the launch of the TinyFish Fetch API, a dual-layer web page fetching and content extraction service designed for AI agents that renders URLs through Chromium and returns structured content in Markdown, HTML, or JSON.",
+    "key_facts": [
+      "In testing across 200 URLs, over 10% of \"successful\" fetches returned nearly empty content—enough to pass validation but not enough for AI agents to reason on.",
+      "The Fetch API is a dual-layer service that renders URLs via Chromium, extracts structured content, and returns it in Markdown, HTML, or JSON, supporting batch processing of up to 10 URLs.",
+      "The article compares Fetch API with competing tools including Exa, Firecrawl, and Crawl4AI, and includes a curl code example for API usage with SSRF protections."
+    ],
+    "js_required": false,
+    "rendered_chars": 3500,
+    "nav_links": 22,
+    "render_blockers": [],
+    "run_error": null
+  },
+  "competitor_benchmarks": [
+    {
+      "url": "https://www.reddit.com/r/AI_Agents/comments/1slc6ed/we_shipped_4_web_apis_for_ai_agents_today_search/",
+      "position": 1,
+      "title": "We shipped 4 web APIs for AI agents today - Search, Fetch ...",
+      "benchmark": {
+        "words": 463,
+        "h2": 0,
+        "has_faq_schema": false
+      }
+    }
+  ]
+}

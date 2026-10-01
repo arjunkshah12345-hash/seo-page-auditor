@@ -1,0 +1,232 @@
+{
+  "url": "https://stripe.com/pricing",
+  "target_query": "stripe pricing",
+  "scores": {
+    "ai_readability_score": 88,
+    "ai_visibility_score": 98,
+    "overall_score": 92,
+    "verdict": "AI-ready: readable by AI tools and visible in search. Keep it fresh.",
+    "weights": {
+      "readability": 0.6,
+      "visibility": 0.4
+    },
+    "projected_after_fixes": {
+      "overall_score": 92,
+      "ai_readability_score": 88,
+      "ai_visibility_score": 98
+    }
+  },
+  "findings": [
+    {
+      "id": "weak-title",
+      "severity": "medium",
+      "area": "visibility",
+      "title": "Title length outside the display window",
+      "evidence": "Title is 14 chars: “Pricing & Fees”. Search snippets truncate around 60 chars.",
+      "fix": "Rewrite to 50–60 chars, front-load the primary keyword, keep the brand suffix: e.g. “<Primary Keyword> — <Brand>”.",
+      "source": "TinyFish Fetch"
+    },
+    {
+      "id": "no-authorship",
+      "severity": "low",
+      "area": "authority",
+      "title": "No author or date metadata",
+      "evidence": "Fetch found no author and no published date — AI answer engines weight provenance when choosing sources to cite.",
+      "fix": "Add author byline markup: <meta name=\"author\" content=\"…\">, a visible byline, and datePublished/author in JSON-LD.",
+      "source": "TinyFish Fetch"
+    },
+    {
+      "id": "boilerplate-heavy",
+      "severity": "low",
+      "area": "readability",
+      "title": "Heavy repeated boilerplate in extraction",
+      "evidence": "30% of extracted lines repeat 3+ times (nav/footer/promo residue) — this dilutes the content an AI quotes.",
+      "fix": "Wrap navigation and repeated promo blocks in <nav>/<footer> or remove them from the content area so extractors can drop them.",
+      "source": "TinyFish Fetch"
+    },
+    {
+      "id": "multi-h1",
+      "severity": "low",
+      "area": "structure",
+      "title": "5 H1 tags on one page",
+      "evidence": "Extraction found 5 <h1> elements; a single H1 makes the page topic unambiguous.",
+      "fix": "Demote all but the main headline to <h2>.",
+      "source": "TinyFish Fetch"
+    },
+    {
+      "id": "snippet-offtopic",
+      "severity": "low",
+      "area": "visibility",
+      "title": "Search snippet barely matches the query",
+      "evidence": "Snippet shown for “stripe pricing”: “Pay monthly. Annual subscription. Paid monthly. Based on a volume tier that works for your business. Starting at $620.00. per month, 1-year…” — little term overlap with the query, so engines may be improvising this page's description.",
+      "fix": "Rewrite the meta description to answer the query directly; search engines often adopt a well-written description verbatim.",
+      "source": "TinyFish Search"
+    },
+    {
+      "id": "agent-understood",
+      "severity": "info",
+      "area": "readability",
+      "title": "A browsing AI understands the page",
+      "evidence": "Agent's one-line read: “This is Stripe's official pricing page detailing fee structures and costs for their payment processing and financial services products.”. Key facts it extracted: Standard payments pricing is 2.9% + 30¢ per successful domestic card transactio…; Stripe supports 195+ countries, 135+ currencies, and 100+ payment methods with …; Product categories include Global Payments (Payments, Link, Checkout, Terminal,…",
+      "fix": "Keep the opening screen this clear; make sure the key facts stay in static text.",
+      "source": "TinyFish Agent"
+    },
+    {
+      "id": "ranked-top3",
+      "severity": "info",
+      "area": "visibility",
+      "title": "Ranks #1 for “stripe pricing”",
+      "evidence": "Strong: position 1 for the target query. Protect it.",
+      "fix": "Keep this page fresh (update stats/dates) and watch the competitors listed in the report.",
+      "source": "TinyFish Search"
+    }
+  ],
+  "readability": {
+    "md_chars": 23421,
+    "md_words": 3115,
+    "md_lexical_ratio": 0.744,
+    "title": "Pricing & Fees",
+    "description": "Find Stripe fees and pricing information. Find our processing fees for credit cards, pricing models and pay-as-you-go fees for businesses.",
+    "language": "en",
+    "author": null,
+    "published_date": null,
+    "h1_count": 5,
+    "h2_count": 2,
+    "h3_count": 6,
+    "paragraphs": 439,
+    "lists": 31,
+    "tables": 0,
+    "semantic_tags": [
+      "section"
+    ],
+    "looks_empty": false,
+    "looks_truncated": false,
+    "repeated_boilerplate_ratio": 0.297,
+    "stat_sentences": 46,
+    "question_headings": [],
+    "longest_paragraph_words": 74,
+    "errors": []
+  },
+  "origin": {
+    "status": 200,
+    "final_url": "https://stripe.com/pricing",
+    "html_bytes": 972371,
+    "title": "Pricing &amp; Fees",
+    "title_len": 18,
+    "meta_description": "Find Stripe fees and pricing information. Find our processing fees for credit cards, pricing models and pay-as-you-go fees for businesses.",
+    "meta_description_len": 138,
+    "canonical": "https://stripe.com/pricing",
+    "robots_meta": null,
+    "og_title": "Pricing &amp; Fees",
+    "og_description": "Find Stripe fees and pricing information. Find our processing fees for credit cards, pricing models and pay-as-you-go fees for businesses.",
+    "og_image": "https://images.stripeassets.com/fzn2n1nzq965/7ITBvIUjBudsnymEYtOddj/3f4e576e49ed82d6442ff9b8a3e07784/pricing-stripe-default-social-card.jpg?q=80",
+    "jsonld_types": [
+      "FAQPage"
+    ],
+    "jsonld_parse_error": null,
+    "jsonld_blocks": 1,
+    "h1_count": 153,
+    "h2_count": 4,
+    "img_count": 57,
+    "img_missing_alt": 0,
+    "hreflang_count": 89,
+    "raw_content_tags": 1084,
+    "redirect": false,
+    "content_type": "text/html; charset=utf-8",
+    "ua_retried": false
+  },
+  "robots": {
+    "exists": true,
+    "status": 200,
+    "ai_blocked": [],
+    "ai_allowed": [
+      "GPTBot",
+      "OAI-SearchBot",
+      "ChatGPT-User",
+      "ClaudeBot",
+      "Claude-Web",
+      "anthropic-ai",
+      "PerplexityBot",
+      "Google-Extended",
+      "Bytespider",
+      "CCBot",
+      "Applebot-Extended",
+      "meta-externalagent"
+    ],
+    "search_blocked": [],
+    "sitemap_urls": [
+      "https://stripe.com/sitemap/sitemap.xml"
+    ],
+    "raw_excerpts": {}
+  },
+  "llms_txt": {
+    "exists": true,
+    "status": 200,
+    "url": "https://stripe.com/llms.txt",
+    "bytes": 69923,
+    "sections": 32,
+    "links": 305
+  },
+  "visibility": {
+    "url": "https://stripe.com/pricing",
+    "target_query": "stripe pricing",
+    "domain": "stripe.com",
+    "registrable_domain": "stripe.com",
+    "brand": "stripe",
+    "probes": [
+      "VariantProbe(query='stripe pricing', total_results=7, page_rank=1, page_entry_title='Pricing & Fees', page_entry_snippet='Pay monthly. Annual subscription. Paid monthly. Based on a volume tier that works for your business. Starting at $620.00. per month, 1-year contract.', top_results=[{'position': 1, 'title': 'Pricing & Fees', 'url': 'https://stripe.com/pricing', 'site_name': 'stripe.com', 'snippet': 'Pay monthly. Annual subscription. Paid monthly. Based on a volume tier that works for your business. Starting at $620.00. per month, 1-year contract.'}, {'position': 2, 'title': 'Recurring pricing models', 'url': 'https://docs.stripe.com/products-prices/pricing-models', 'site_name': 'docs.stripe.com', 'snippet': 'Configure flat rate, per-seat, usage-based, tiered, package, volume, and variable pricing models for subscriptions with multiple currencies.'}, {'position': 3, 'title': 'Stripe fees 2026: every rate and what a $100 sale nets you', 'url': 'https://checkoutpage.com/blog/stripe-processing-fees?srsltid=AU7gw4WdgqSXXDSfwAXl1qaI4ATfO-BYZxWDWmAzFxQlZ20UBiEzZ1g1', 'site_name': 'checkoutpage.com', 'snippet': \"What are Stripe's fees? Stripe charges 2.9% + 30¢ per successful online card payment in the US. There are no setup or monthly fees on the ...\"}, {'position': 4, 'title': 'Prices | Stripe API Reference', 'url': 'https://docs.stripe.com/api/prices', 'site_name': 'docs.stripe.com', 'snippet': 'Prices define the unit cost, currency, and (optional) billing cycle for both recurring and one-time purchases of products. Products help you track inventory or ...'}, {'position': 5, 'title': 'Stripe fees: a complete guide to pricing & costs', 'url': 'https://wise.com/us/blog/stripe-fees', 'site_name': 'wise.com', 'snippet': 'Via Direct Debit, ACH transfers cost 0.8% up to a cap of $5. But via other methods the fees are different: ACH Credit payments are $1, and wire payments are $8.'}, {'position': 6, 'title': 'Stripe Fees: Pricing and Calculator', 'url': 'https://www.nerdwallet.com/business/software/learn/stripe-fees', 'site_name': 'www.nerdwallet.com', 'snippet': '2.7% plus 5 cents for in-person transactions. 2.9% plus 30 cents for online transactions. 3.4% plus 30 cents for manually keyed transactions.'}, {'position': 7, 'title': 'Fees on fees on fees : r/stripe', 'url': 'https://www.reddit.com/r/stripe/comments/1od8hft/fees_on_fees_on_fees/', 'site_name': 'www.reddit.com', 'snippet': '2.9% is the industry standard. Any other payment processor will be higher. This is the same rate too that physical card processing machines at ...'}])",
+      "VariantProbe(query='stripe', total_results=6, page_rank=None, page_entry_title=None, page_entry_snippet=None, top_results=[{'position': 1, 'title': 'Stripe | Financial Infrastructure to Grow Your Revenue', 'url': 'https://stripe.com/', 'site_name': 'stripe.com', 'snippet': 'Stripe is a financial services platform that helps all types of businesses accept payments, build flexible billing models, and manage money movement.'}, {'position': 2, 'title': 'Stripe', 'url': 'https://www.linkedin.com/company/stripe', 'site_name': 'www.linkedin.com', 'snippet': \"Stripe is a financial infrastructure platform for businesses. Millions of companies—from the world's largest. Headquartered in San Francisco and Dublin,\"}, {'position': 3, 'title': 'Stripe, Inc.', 'url': 'https://en.wikipedia.org/wiki/Stripe,_Inc.', 'site_name': 'en.wikipedia.org', 'snippet': 'Stripe is the largest privately owned financial technology company with a valuation of about $159 billion and over $1.9 trillion in payment volume processed in ...'}, {'position': 4, 'title': 'Stripe', 'url': 'https://x.com/stripe', 'site_name': 'x.com', 'snippet': 'Building programmable financial services. we are the largest AI marketplace & gateway, processing 10T+ tokens daily on 400+ models. and billing integrated.'}, {'position': 5, 'title': 'What Is Stripe, and How Does It Work to Accept Payments?', 'url': 'https://www.nerdwallet.com/business/software/learn/what-is-stripe', 'site_name': 'www.nerdwallet.com', 'snippet': 'Stripe is a payment services provider that lets businesses accept a wide variety of payment types online and in-person.'}, {'position': 6, 'title': 'r/stripe', 'url': 'https://www.reddit.com/r/stripe/', 'site_name': 'www.reddit.com', 'snippet': 'r/stripe: Stripe is a technology company that builds economic infrastructure for the internet. Businesses of every size—from new startups to public…'}])"
+    ],
+    "exact_rank": 1,
+    "exact_snippet": "Pay monthly. Annual subscription. Paid monthly. Based on a volume tier that works for your business. Starting at $620.00. per month, 1-year contract.",
+    "competitors": [
+      {
+        "position": 3,
+        "title": "Stripe fees 2026: every rate and what a $100 sale nets you",
+        "url": "https://checkoutpage.com/blog/stripe-processing-fees?srsltid=AU7gw4WdgqSXXDSfwAXl1qaI4ATfO-BYZxWDWmAzFxQlZ20UBiEzZ1g1",
+        "site_name": "checkoutpage.com",
+        "snippet": "What are Stripe's fees? Stripe charges 2.9% + 30¢ per successful online card payment in the US. There are no setup or monthly fees on the ..."
+      },
+      {
+        "position": 5,
+        "title": "Stripe fees: a complete guide to pricing & costs",
+        "url": "https://wise.com/us/blog/stripe-fees",
+        "site_name": "wise.com",
+        "snippet": "Via Direct Debit, ACH transfers cost 0.8% up to a cap of $5. But via other methods the fees are different: ACH Credit payments are $1, and wire payments are $8."
+      },
+      {
+        "position": 6,
+        "title": "Stripe Fees: Pricing and Calculator",
+        "url": "https://www.nerdwallet.com/business/software/learn/stripe-fees",
+        "site_name": "www.nerdwallet.com",
+        "snippet": "2.7% plus 5 cents for in-person transactions. 2.9% plus 30 cents for online transactions. 3.4% plus 30 cents for manually keyed transactions."
+      },
+      {
+        "position": 7,
+        "title": "Fees on fees on fees : r/stripe",
+        "url": "https://www.reddit.com/r/stripe/comments/1od8hft/fees_on_fees_on_fees/",
+        "site_name": "www.reddit.com",
+        "snippet": "2.9% is the industry standard. Any other payment processor will be higher. This is the same rate too that physical card processing machines at ..."
+      }
+    ],
+    "brand_rank": null,
+    "brand_site_rank": 1,
+    "notes": []
+  },
+  "browser_agent": {
+    "attempted": true,
+    "understood": true,
+    "summary": "This is Stripe's official pricing page detailing fee structures and costs for their payment processing and financial services products.",
+    "key_facts": [
+      "Standard payments pricing is 2.9% + 30¢ per successful domestic card transaction, with additional fees for international cards (+1.5%), currency conversion (+1%), and manually entered cards (+0.5%)",
+      "Stripe supports 195+ countries, 135+ currencies, and 100+ payment methods with a 99.999% historical uptime claim and a Forrester-verified 326% return on investment",
+      "Product categories include Global Payments (Payments, Link, Checkout, Terminal, etc.), Money Management (Connect, Treasury, Issuing), Revenue and Finance Automation (Billing, Tax, Invoicing, Sigma), and More (Radar, Identity, Atlas, Climate, Workflows)"
+    ],
+    "js_required": false,
+    "rendered_chars": 8500,
+    "nav_links": 106,
+    "render_blockers": [],
+    "run_error": null
+  },
+  "competitor_benchmarks": []
+}

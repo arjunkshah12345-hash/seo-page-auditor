@@ -1,0 +1,284 @@
+{
+  "url": "https://www.physera.ai/research/animation",
+  "target_query": "web animation benchmark",
+  "scores": {
+    "ai_readability_score": 89,
+    "ai_visibility_score": 14,
+    "overall_score": 59,
+    "verdict": "Significant barriers: AI tools struggle to read or find this page. Work the critical/high findings first.",
+    "weights": {
+      "readability": 0.6,
+      "visibility": 0.4
+    },
+    "projected_after_fixes": {
+      "overall_score": 87,
+      "ai_readability_score": 89,
+      "ai_visibility_score": 84
+    }
+  },
+  "findings": [
+    {
+      "id": "brand-not-found",
+      "severity": "high",
+      "area": "authority",
+      "title": "Site not found for brand query “physera”",
+      "evidence": "A search for the site's own brand token “physera” surfaced no page from physera.ai in the top 10 — a sign of weak indexing or brand signals.",
+      "fix": "Make sure the domain/brand string appears in the <title>, H1, JSON-LD Organization name, and is linked from the homepage nav; submit the URL in Search Console.",
+      "source": "TinyFish Search"
+    },
+    {
+      "id": "not-ranked",
+      "severity": "high",
+      "area": "visibility",
+      "title": "Not in top-10 for “web animation benchmark”",
+      "evidence": "TinyFish Search top-10 for “web animation benchmark” is dominated by: www.mdpi.com (#1), motion.dev (#2), www.reddit.com (#3), gsap.com (#4). This page does not appear — AI search engines inherit this ordering when citing sources.",
+      "fix": "Align the page to the query: put “web animation benchmark” (or a close variant) in the <title>, H1, first paragraph and one H2; add an FAQ section answering the question behind the query; then interlink to this page from your two highest-authority pages.",
+      "source": "TinyFish Search"
+    },
+    {
+      "id": "no-h1",
+      "severity": "medium",
+      "area": "structure",
+      "title": "No H1 survives extraction",
+      "evidence": "The extracted HTML contains no <h1> — answer engines use it to anchor what the page is about.",
+      "fix": "Make the page headline an <h1> containing the primary keyword, exactly once.",
+      "source": "TinyFish Fetch"
+    },
+    {
+      "id": "content-depth-gap",
+      "severity": "medium",
+      "area": "visibility",
+      "title": "Materially thinner than the pages outranking it",
+      "evidence": "Pages above it for 'web animation benchmark' carry 8,445 words and 16 H2 sections (median of the top 2 fetched live: https://www.mdpi.com/2313-433X/12/1/45, https://motion.dev/magazine/web-animation-performance-tier-list); this page extracts 3,650 words and 14 H2s. Depth is a proxy for answer completeness.",
+      "fix": "Add roughly 4,795 words covering the sub-questions the leaders answer in their 16 sections — and ship an FAQ block; pages with FAQPage schema are disproportionately lifted into AI answers.",
+      "source": "TinyFish Search + Fetch (competitor benchmark)"
+    },
+    {
+      "id": "title-missing-query-terms",
+      "severity": "medium",
+      "area": "visibility",
+      "title": "Title/URL miss part of the target query",
+      "evidence": "Query terms absent from the page's title and URL: benchmark, web.",
+      "fix": "Work these terms into the <title> and H1 naturally (e.g. “… benchmark, web …”).",
+      "source": "TinyFish Search"
+    },
+    {
+      "id": "weak-description",
+      "severity": "low",
+      "area": "visibility",
+      "title": "Meta description length off the display window",
+      "evidence": "Description is 58 chars (ideal 140–160): “Evaluating Frontier Models on Web Animation Reconstruction”.",
+      "fix": "Rewrite to 140–160 chars: what the page answers + one differentiator + a verb.",
+      "source": "TinyFish Fetch"
+    },
+    {
+      "id": "llms-txt-missing",
+      "severity": "info",
+      "area": "authority",
+      "title": "No llms.txt (opportunity)",
+      "evidence": "No /llms.txt found — the emerging convention AI tools use to fetch a curated, markdown map of a site.",
+      "fix": "Publish /llms.txt listing your key pages in markdown with one-line descriptions:\n```\n# <Site name>\n\n> One-sentence what this site is.\n\n## Pages\n- [This page](<url>): what it answers\n- [Docs](<url>): …\n```",
+      "source": "origin HTTP"
+    },
+    {
+      "id": "agent-understood",
+      "severity": "info",
+      "area": "readability",
+      "title": "A browsing AI understands the page",
+      "evidence": "Agent's one-line read: “A research benchmark called Animation Bench by Physera that evaluates how well frontier multimodal coding agents (GPT-6 Astra, Claude Fable…”. Key facts it extracted: Four frontier models were tested on 48 real-world web animation tasks from 32 l…; Models scored significantly lower on motion consistency (mean 0.38–0.47) than o…; GPT-6 Astra ranked first with an overall score of 0.594, followed by Claude Fab…",
+      "fix": "Keep the opening screen this clear; make sure the key facts stay in static text.",
+      "source": "TinyFish Agent"
+    }
+  ],
+  "readability": {
+    "md_chars": 29509,
+    "md_words": 3650,
+    "md_lexical_ratio": 0.718,
+    "title": "Animation Bench | Physera",
+    "description": "Evaluating Frontier Models on Web Animation Reconstruction",
+    "language": "en",
+    "author": "Physera",
+    "published_date": null,
+    "h1_count": 0,
+    "h2_count": 14,
+    "h3_count": 13,
+    "paragraphs": 118,
+    "lists": 6,
+    "tables": 8,
+    "semantic_tags": [
+      "main",
+      "article",
+      "section",
+      "table",
+      "figure",
+      "summary",
+      "details"
+    ],
+    "looks_empty": false,
+    "looks_truncated": false,
+    "repeated_boilerplate_ratio": 0.038,
+    "stat_sentences": 8,
+    "question_headings": [
+      "Visual similarity: does it look right at a given moment?",
+      "Motion consistency: does it move right over time?",
+      "Layout correctness: is it built like the original?",
+      "Where animation reconstructions fail"
+    ],
+    "longest_paragraph_words": 94,
+    "errors": []
+  },
+  "origin": {
+    "status": 200,
+    "final_url": "https://www.physera.ai/research/animation",
+    "html_bytes": 414060,
+    "title": "Animation Bench | Physera",
+    "title_len": 25,
+    "meta_description": "Evaluating Frontier Models on Web Animation Reconstruction",
+    "meta_description_len": 58,
+    "canonical": "https://physera.ai/research/animation",
+    "robots_meta": "index, follow",
+    "og_title": "Animation Bench | Physera",
+    "og_description": "Evaluating Frontier Models on Web Animation Reconstruction",
+    "og_image": "https://physera.ai/research/animation-bench-thumbnail.bce938b8.webp",
+    "jsonld_types": [
+      "Organization",
+      "WebSite"
+    ],
+    "jsonld_parse_error": null,
+    "jsonld_blocks": 1,
+    "h1_count": 1,
+    "h2_count": 14,
+    "img_count": 231,
+    "img_missing_alt": 0,
+    "hreflang_count": 0,
+    "raw_content_tags": 715,
+    "redirect": false,
+    "content_type": "text/html; charset=utf-8",
+    "ua_retried": false
+  },
+  "robots": {
+    "exists": true,
+    "status": 200,
+    "ai_blocked": [],
+    "ai_allowed": [
+      "GPTBot",
+      "OAI-SearchBot",
+      "ChatGPT-User",
+      "ClaudeBot",
+      "Claude-Web",
+      "anthropic-ai",
+      "PerplexityBot",
+      "Google-Extended",
+      "Bytespider",
+      "CCBot",
+      "Applebot-Extended",
+      "meta-externalagent"
+    ],
+    "search_blocked": [],
+    "sitemap_urls": [
+      "https://physera.ai/sitemap.xml"
+    ],
+    "raw_excerpts": {}
+  },
+  "llms_txt": {
+    "exists": false,
+    "status": 404,
+    "url": null,
+    "bytes": 0,
+    "sections": 0,
+    "links": 0
+  },
+  "visibility": {
+    "url": "https://www.physera.ai/research/animation",
+    "target_query": "web animation benchmark",
+    "domain": "www.physera.ai",
+    "registrable_domain": "physera.ai",
+    "brand": "physera",
+    "probes": [
+      "VariantProbe(query='web animation benchmark', total_results=10, page_rank=None, page_entry_title=None, page_entry_snippet=None, top_results=[{'position': 1, 'title': 'A Cross-Device and Cross-OS Benchmark of Modern Web ...', 'url': 'https://www.mdpi.com/2313-433X/12/1/45', 'site_name': 'www.mdpi.com', 'snippet': 'by T Koren Ivančević · 2026 — This study systematically evaluates animation performance across multiple platforms using a unified set of circle-based animations implemented with eight web- ...'}, {'position': 2, 'title': 'The Web Animation Performance Tier List | Motion Magazine', 'url': 'https://motion.dev/magazine/web-animation-performance-tier-list', 'site_name': 'motion.dev', 'snippet': 'Learn what makes web animations fast, slow, and everything in between with our 2025 web animation performance tier list.'}, {'position': 3, 'title': 'The Web Animation Performance Tier List - Motion Blog', 'url': 'https://www.reddit.com/r/javascript/comments/1opwrvx/the_web_animation_performance_tier_list_motion/', 'site_name': 'www.reddit.com', 'snippet': 'Learn what makes web animations fast, slow, and everything in between with our 2025 web animation performance tier list.'}, {'position': 4, 'title': 'JavaScript Animation Speed Test', 'url': 'https://gsap.com/js/speed.html', 'site_name': 'gsap.com', 'snippet': 'Compare the performance of various JavaScript libraries with GSAP. This test simply animates the left, top, width, and height css properties of standard image ...'}, {'position': 5, 'title': 'Master Web Animations in 2 Hours | Build an Awwwards-Level ...', 'url': 'https://www.youtube.com/watch?v=AW1yfBKRMKc', 'site_name': 'www.youtube.com', 'snippet': 'Learn how to animate elements using GAP from to and from to methods, how to control your animations with scroll trigger.'}, {'position': 6, 'title': 'A Cross-Device and Cross-OS Benchmark of Modern Web ...', 'url': 'https://www.researchgate.net/publication/400119598_A_Cross-Device_and_Cross-OS_Benchmark_of_Modern_Web_Animation_Systems', 'site_name': 'www.researchgate.net', 'snippet': 'This study systematically evaluates animation performance across multiple platforms using a unified set of circle-based animations implemented ...'}, {'position': 7, 'title': 'A Comparison of Animation Technologies', 'url': 'https://css-tricks.com/comparison-animation-technologies/', 'site_name': 'css-tricks.com', 'snippet': 'The Web Animations API is native JavaScript that allows you to create more complex sequential animations without loading any external scripts.'}, {'position': 8, 'title': 'Investigate Animation Performance with DevTools - Calibre', 'url': 'https://calibreapp.com/blog/investigate-animation-performance-with-devtools', 'site_name': 'calibreapp.com', 'snippet': 'Learn how to keep your animations buttery smooth at 60 fps in this detailed guide to exploring animation performance using Chrome DevTools.'}, {'position': 9, 'title': 'A Comprehensive Benchmark for Evaluating AI on Graphic ...', 'url': 'https://arxiv.org/html/2604.04192v2', 'site_name': 'arxiv.org', 'snippet': 'The first comprehensive benchmark for graphic design AI. We introduce GDB, covering 49 tasks across layout, typography, SVG & vector, and animation, spanning ...'}, {'position': 10, 'title': 'MotionMark 1.3.2', 'url': 'https://browserbench.org/MotionMark1.3.2/', 'site_name': 'browserbench.org', 'snippet': \"MotionMark is a graphics benchmark that measures a browser's capability to animate complex scenes at a target frame rate. More details about the benchmark ...\"}])",
+      "VariantProbe(query='web animation benchmark physera', total_results=10, page_rank=None, page_entry_title=None, page_entry_snippet=None, top_results=[{'position': 1, 'title': 'Physera', 'url': 'https://x.com/PhyseraAI/status/2105333181012738473/photo/1', 'site_name': 'x.com', 'snippet': 'Introducing Animation Bench, our first benchmark to evaluate frontier models on web animation reconstruction. recreate visually plausible web ...'}, {'position': 2, 'title': 'A Cross-Device and Cross-OS Benchmark of Modern Web ...', 'url': 'https://www.mdpi.com/2313-433X/12/1/45', 'site_name': 'www.mdpi.com', 'snippet': 'by T Koren Ivančević · 2026 — By analysing CPU usage, GPU usage, and frame rate across increasing object counts, this study provides OS Benchmark of Modern Web Animation Systems.'}, {'position': 3, 'title': 'The Web Animation Performance Tier List | Motion Magazine', 'url': 'https://motion.dev/magazine/web-animation-performance-tier-list', 'site_name': 'motion.dev', 'snippet': 'Learn what makes web animations fast, slow, and everything in between with our 2025 web animation performance tier list.'}, {'position': 4, 'title': 'A Cross-Device and Cross-OS Benchmark of Modern Web ...', 'url': 'https://www.researchgate.net/publication/400119598_A_Cross-Device_and_Cross-OS_Benchmark_of_Modern_Web_Animation_Systems', 'site_name': 'www.researchgate.net', 'snippet': 'This study systematically evaluates animation performance across multiple platforms using a unified set of circle-based animations implemented ...'}, {'position': 5, 'title': 'Towards an animation smoothness metric | Articles', 'url': 'https://web.dev/articles/smoothness', 'site_name': 'web.dev', 'snippet': 'Learn about measuring animations, how to think about animation frames, and overall page smoothness. web animations have performance limits. ...'}, {'position': 6, 'title': 'himanshu', 'url': 'https://x.com/himanshustwts/status/2105335142499881349', 'site_name': 'x.com', 'snippet': 'Today, I am excited to announce Animation Bench. Our first benchmark to evaluate frontier models on web animation reconstruction.'}, {'position': 7, 'title': 'Physera | Rethinking Applied Intelligence', 'url': 'https://physera.ai/', 'site_name': 'physera.ai', 'snippet': 'Physera is a research and product lab ... A new class of commercially meaningful, taste-based benchmarks across hard tasks like UI, animation, and voice.'}, {'position': 8, 'title': 'animation-benchmark', 'url': 'https://skills.rest/skill/animation-benchmark', 'site_name': 'skills.rest', 'snippet': 'You can benchmark web animation performance before merging by running checks that evaluate FPS stability, long task delays, layout shift risks, and ...'}, {'position': 9, 'title': 'Animation performance and frame rate - MDN Web Docs', 'url': 'https://developer.mozilla.org/en-US/docs/Web/Performance/Guides/Animation_performance_and_frame_rate', 'site_name': 'developer.mozilla.org', 'snippet': 'Responsive user interfaces have a frame rate of 60 frames per second (fps). While it is not always possible to maintain 60fps, it is important ...'}, {'position': 10, 'title': 'Website animation and movement: The why and the how', 'url': 'https://credera.com/en-us/insights/website-animation-and-movement-the-why-and-the-how', 'site_name': 'credera.com', 'snippet': \"There actually aren't very many CSS properties we can transition or animate cheaply enough in the browser to reliably hit 60 frames per second.\"}])",
+      "VariantProbe(query='physera', total_results=10, page_rank=None, page_entry_title=None, page_entry_snippet=None, top_results=[{'position': 1, 'title': 'Omada Health Acquires Physera', 'url': 'https://www.omadahealth.com/resource-center/omada-health-acquires-physera', 'site_name': 'www.omadahealth.com', 'snippet': 'Omada Health today announced the acquisition of Physera, a leading musculoskeletal care company that delivers interventions digitally and via ...'}, {'position': 2, 'title': 'Omada Health buys virtual physical therapy startup ...', 'url': 'https://www.fiercehealthcare.com/tech/omada-health-buys-virtual-physical-therapy-provider-physera-for-rumored-30m', 'site_name': 'www.fiercehealthcare.com', 'snippet': 'Physera, launched in 2015, specializes in virtual physical therapy for muscle and joint pain and delivers interventions digitally and via ...'}, {'position': 3, 'title': 'Physera', 'url': 'https://www.linkedin.com/company/physera', 'site_name': 'www.linkedin.com', 'snippet': \"Physera's innovative program for managing musculoskeletal (MSK) conditions offers quick and easy access to virtual physical therapy using a smartphone.\"}, {'position': 4, 'title': 'Musculoskeletal (MSK) Program', 'url': 'https://www.omadahealth.com/musculoskeletal', 'site_name': 'www.omadahealth.com', 'snippet': 'Omada Health, Inc. works in partnership with Physera Physical Therapy Group, PC and other contracted partners to be your Omada care team and deliver certain ...'}, {'position': 5, 'title': 'Physera', 'url': 'https://blueventurefund.com/portfolio-companies/physera', 'site_name': 'blueventurefund.com', 'snippet': 'Physera offers personalized triage and virtual physical therapy programs improving patient experience and reducing musculoskeletal (MSK) costs.'}, {'position': 6, 'title': 'Physera', 'url': 'https://www.facebook.com/Physera/', 'site_name': 'www.facebook.com', 'snippet': 'Physera A technology-assisted, virtual physical therapy program with live, licensed physical therapists who diagnose musculoskeletal related conditions,'}, {'position': 7, 'title': 'Omada for Joint and Muscle Health | Login', 'url': 'https://physera.com/login', 'site_name': 'physera.com', 'snippet': \"Provider Login. Sign into the Omada for Joint and Muscle Health Dashboard. Sign in with SSO. Don't have an account? Join the Omada team.\"}, {'position': 8, 'title': 'Physera', 'url': 'https://x.com/physera', 'site_name': 'x.com', 'snippet': 'A virtual physical therapy program with live, licensed PTs who diagnose MSK related conditions, prescribe personalized exercises and drive adherence.'}, {'position': 9, 'title': 'Omada Joint & Muscle Health - Apps on Google Play', 'url': 'https://play.google.com/store/apps/details?id=com.healthcoda.physera&hl=en_US', 'site_name': 'play.google.com', 'snippet': 'Build strength and flexibility, or treat aches and injuries—all from your smartphone and on your schedule! • Get a personalized care plan and ongoing ...'}, {'position': 10, 'title': \"Physera's telehealth MSK therapy platform raises $8M\", 'url': 'https://www.mobihealthnews.com/content/physeras-telehealth-msk-therapy-platform-raises-8m', 'site_name': 'www.mobihealthnews.com', 'snippet': \"Physera's free Android and iOS app offers users a range of exercises designed to reduce MSK pains, each of which is demonstrated with in-app ...\"}])"
+    ],
+    "exact_rank": null,
+    "exact_snippet": null,
+    "competitors": [
+      {
+        "position": 1,
+        "title": "A Cross-Device and Cross-OS Benchmark of Modern Web ...",
+        "url": "https://www.mdpi.com/2313-433X/12/1/45",
+        "site_name": "www.mdpi.com",
+        "snippet": "by T Koren Ivančević · 2026 — This study systematically evaluates animation performance across multiple platforms using a unified set of circle-based animations implemented with eight web- ..."
+      },
+      {
+        "position": 2,
+        "title": "The Web Animation Performance Tier List | Motion Magazine",
+        "url": "https://motion.dev/magazine/web-animation-performance-tier-list",
+        "site_name": "motion.dev",
+        "snippet": "Learn what makes web animations fast, slow, and everything in between with our 2025 web animation performance tier list."
+      },
+      {
+        "position": 3,
+        "title": "The Web Animation Performance Tier List - Motion Blog",
+        "url": "https://www.reddit.com/r/javascript/comments/1opwrvx/the_web_animation_performance_tier_list_motion/",
+        "site_name": "www.reddit.com",
+        "snippet": "Learn what makes web animations fast, slow, and everything in between with our 2025 web animation performance tier list."
+      },
+      {
+        "position": 4,
+        "title": "JavaScript Animation Speed Test",
+        "url": "https://gsap.com/js/speed.html",
+        "site_name": "gsap.com",
+        "snippet": "Compare the performance of various JavaScript libraries with GSAP. This test simply animates the left, top, width, and height css properties of standard image ..."
+      },
+      {
+        "position": 5,
+        "title": "Master Web Animations in 2 Hours | Build an Awwwards-Level ...",
+        "url": "https://www.youtube.com/watch?v=AW1yfBKRMKc",
+        "site_name": "www.youtube.com",
+        "snippet": "Learn how to animate elements using GAP from to and from to methods, how to control your animations with scroll trigger."
+      }
+    ],
+    "brand_rank": null,
+    "brand_site_rank": null,
+    "notes": [
+      "Page did not appear in the first page (top 10) of TinyFish results for the exact query."
+    ]
+  },
+  "browser_agent": {
+    "attempted": true,
+    "understood": true,
+    "summary": "A research benchmark called Animation Bench by Physera that evaluates how well frontier multimodal coding agents (GPT-6 Astra, Claude Fable 5.1, GPT-6 Sol, Claude Opus 5.5) can reconstruct web page animations versus static screenshots.",
+    "key_facts": [
+      "Four frontier models were tested on 48 real-world web animation tasks from 32 live commercial websites, producing 192 total reconstructions.",
+      "Models scored significantly lower on motion consistency (mean 0.38–0.47) than on visual similarity (mean 0.63–0.71), revealing that while agents can match static appearance, they struggle with timing, sequencing, and interaction behaviors.",
+      "GPT-6 Astra ranked first with an overall score of 0.594, followed by Claude Fable 5.1 (0.548), GPT-6 Sol (0.516), and Claude Opus 5.5 (0.507), with cost showing little correlation to performance."
+    ],
+    "js_required": false,
+    "rendered_chars": 8700,
+    "nav_links": 5,
+    "render_blockers": [],
+    "run_error": null
+  },
+  "competitor_benchmarks": [
+    {
+      "url": "https://www.mdpi.com/2313-433X/12/1/45",
+      "position": 1,
+      "title": "A Cross-Device and Cross-OS Benchmark of Modern Web ...",
+      "benchmark": {
+        "words": 8445,
+        "h2": 16,
+        "has_faq_schema": false
+      }
+    },
+    {
+      "url": "https://motion.dev/magazine/web-animation-performance-tier-list",
+      "position": 2,
+      "title": "The Web Animation Performance Tier List | Motion Magazine",
+      "benchmark": {
+        "words": 3761,
+        "h2": 2,
+        "has_faq_schema": false
+      }
+    }
+  ]
+}
