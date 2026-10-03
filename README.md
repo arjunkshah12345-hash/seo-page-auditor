@@ -1,6 +1,6 @@
 # SEO Page Auditor — "Can AI read my page, and can search find it?"
 
-[![CI](https://github.com/arjunkshah12345-hash/seo-page-auditor/actions/workflows/ci.yml/badge.svg)](https://github.com/arjunkshah12345-hash/seo-page-auditor/actions/workflows/ci.yml)
+[![CI](https://github.com/arjunkshah12345-hash/seo-page-auditor/actions/workflows/ci.yml/badge.svg)](https://github.com/arjunkshah12345-hash/seo-page-auditor/actions/workflows/ci.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) ![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-blue)
 
 **AI Search & Readability Auditor built on [TinyFish](https://www.tinyfish.ai).**
 Give it any live URL (plus, optionally, the search query you care about) and it tells you:
@@ -15,7 +15,7 @@ Output: a Markdown report a site owner can act on the same day (plus machine-rea
 
 ## Demo: five live audits, five different stories
 
-Real pages audited with this tool (reports in [`demo/`](demo/), JSON alongside each):
+Real pages audited with this tool (reports in [`demo/`](demo/), JSON alongside each). **See a full report rendered as a page, no install needed: [physera.ai sample →](https://arjunkshah12345-hash.github.io/seo-page-auditor/)**
 
 | Page | Target query | Overall | Readability | Visibility | The story |
 |---|---|---:|---:|---:|---|
@@ -23,7 +23,7 @@ Real pages audited with this tool (reports in [`demo/`](demo/), JSON alongside e
 | [stripe.com/pricing](demo/stripe-pricing.md) | "stripe pricing" | **92** | 88 | 98 | Textbook hygiene: rich JSON-LD (`Product` + `FAQPage`), perfect meta, robots open. Only polish-level findings. |
 | [linear.app](demo/linear-home.md) | "issue tracking tool" | **64** | 80 | 40 | The gap case: page is *readable* (Agent understands it, extraction clean) but *invisible* for the category query — no JSON-LD, not in top-10, and the live competitor benchmark shows the pages above it carry ~4,300 words vs its 870. Projected **86/100** after the listed fixes. |
 | [reddit.com thread](demo/reddit-thread.md) | "tinyfish search and fetch" | **13** | 21 | 0 | The cautionary tale: robots.txt blocks **all 12 major AI crawlers**, content is JS-only, and the browsing AI hit a 403 wall. AI tools literally cannot see or read it. Projected **74/100** after fixes. |
-| [physera.ai — Animation Bench](demo/physera-animation-bench.md) | "web animation benchmark" | **59** | 89 | 14 | The invisible-but-readable case: the browsing AI nails the page ("a research benchmark … that evaluates how well frontier multimodal coding agents …"), extraction is clean — but it's not in the top-10 for its own category, the brand query finds nothing, and the pages above it carry 8,445 words vs its 3,650. Projected **87/100** after fixes. |
+| [physera.ai — Animation Bench](demo/physera-animation-bench.md) ([rendered](https://arjunkshah12345-hash.github.io/seo-page-auditor/)) | "web animation benchmark" | **59** | 89 | 14 | The invisible-but-readable case: the browsing AI nails the page ("a research benchmark … that evaluates how well frontier multimodal coding agents …"), extraction is clean — but it's not in the top-10 for its own category, the brand query finds nothing, and the pages above it carry 8,445 words vs its 3,650. Projected **87/100** after fixes. |
 
 Each report carries:
 
@@ -44,12 +44,21 @@ The engine was deliberately run against hostile inputs to flush out false positi
 ## Quick start
 
 ```bash
-cd seo-auditor
-python3 -m venv .venv && .venv/bin/pip install -e ".[dev]"
-export TINYFISH_API_KEY=...   # never commit this
+# Option A — straight from git, no clone:
+pip install git+https://github.com/arjunkshah12345-hash/seo-page-auditor
 
-.venv/bin/seo-audit https://example.com/blog/my-post "best running shoes 2026" -o report.md --json
+# Option B — clone & editable install:
+git clone https://github.com/arjunkshah12345-hash/seo-page-auditor
+cd seo-page-auditor
+python3 -m venv .venv && .venv/bin/pip install -e ".[dev]"
+
+export TINYFISH_API_KEY=...   # from tinyfish.ai — never commit this
+
+seo-audit https://example.com/blog/my-post "best running shoes 2026" -o report.md --json
+# (with Option B: .venv/bin/seo-audit …)
 ```
+
+No query? Search probes are derived from the page title and brand instead, and the competitor content-gap benchmark is skipped — readability, robots/llms.txt access, and brand visibility are still fully audited.
 
 Useful flags:
 
