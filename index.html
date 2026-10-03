@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Search &amp; Readability Audit — physera.ai/research/animation</title>
+<meta name="description" content="Sample report from SEO Page Auditor — an AI search & readability auditor built on TinyFish Search, Fetch, and Agent.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font:16px/1.62 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:#17150F;background:#FAF8F5;-webkit-font-smoothing:antialiased}
+a{color:#9A3412;text-decoration:none;border-bottom:1px solid #E5C9B8}
+a:hover{border-bottom-color:#9A3412}
+.wrap{max-width:840px;margin:0 auto;padding:52px 24px 72px}
+.eyebrow{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8A8578;font-weight:700}
+h1{font-family:Georgia,"Iowan Old Style",serif;font-size:31px;line-height:1.15;letter-spacing:-.01em;margin:10px 0 6px}
+h2{font-family:Georgia,serif;font-size:20px;margin:40px 0 12px;letter-spacing:-.005em}
+.meta{color:#6E6A5E;font-size:14px;line-height:1.5}
+.card{background:#fff;border:1px solid #E7E3DA;border-radius:12px;padding:20px 22px;margin-top:14px}
+.scores{display:flex;gap:26px;align-items:center;flex-wrap:wrap;margin-top:18px}
+.ring{display:flex;flex-direction:column;align-items:center;gap:2px}
+.ring .lbl{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8A8578;font-weight:600}
+.chip{display:inline-block;background:#17150F;color:#FAF8F5;border-radius:999px;padding:5px 14px;font-size:13.5px;font-weight:600}
+.chip .up{color:#7FD69B}
+.verdict{font-size:15.5px;color:#423E33;margin-top:14px}
+table{width:100%;border-collapse:collapse;font-size:14.5px;margin-top:6px}
+th{font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:#8A8578;text-align:left;font-weight:700;padding:8px 10px;border-bottom:2px solid #E7E3DA}
+td{padding:9px 10px;border-bottom:1px solid #EFECE4;vertical-align:top}
+tr:last-child td{border-bottom:none}
+.ok{color:#15803D;font-weight:700}
+.sev{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;border-radius:6px;padding:3px 9px}
+.hi{background:#FDECE4;color:#9A3412}.me{background:#FCF3D9;color:#92400E}.lo{background:#E3ECFA;color:#1D4ED8}.in{background:#EFEDE7;color:#57534A}
+.f-title{font-weight:700;font-size:16px;margin:2px 0 6px}
+.ev,.fx,.im{font-size:14px;color:#423E33;margin:5px 0}
+.fx b,.ev b,.im b{color:#17150F}
+.fixno{display:flex;gap:12px;align-items:baseline}
+.fixno .n{font-family:Georgia,serif;font-size:26px;font-weight:700;color:#9A3412;min-width:26px}
+.impact{display:inline-block;font-size:12.5px;font-weight:700;color:#92400E;background:#FCF3D9;border-radius:6px;padding:2px 8px;margin-top:6px}
+.kv{font-size:14px;color:#423E33;margin:4px 0}
+.kv code{font-size:12.5px;background:#F1EEE7;border-radius:5px;padding:1.5px 6px}
+.quote{border-left:3px solid #D8D3C6;padding:2px 0 2px 14px;color:#423E33;font-style:italic;margin:6px 0}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px}
+.hero{font-family:Georgia,serif;font-size:38px;font-weight:700;letter-spacing:-.02em}
+.footer{margin-top:56px;padding-top:20px;border-top:2px solid #E7E3DA;color:#6E6A5E;font-size:13.5px}
+@media print{body{background:#fff}.card{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="eyebrow">Sample report · SEO Page Auditor</div>
+<h1>AI Search &amp; Readability Audit</h1>
+<div class="meta"><span class="mono">https://www.physera.ai/research/animation</span> · target query <b>“web animation benchmark”</b><br>Generated 2026-10-01 03:00 UTC · live-page audit via TinyFish Search + Fetch + Agent</div>
+<div class="card">
+  <div class="scores">
+    <div class="ring"><svg width="112" height="112" viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" fill="none" stroke="#EEE9DF" stroke-width="10"/><circle cx="60" cy="60" r="52" fill="none" stroke="#B45309" stroke-width="10" stroke-linecap="round" stroke-dasharray="192.8 326.7" transform="rotate(-90 60 60)"/><text x="60" y="62" text-anchor="middle" font-size="30" font-weight="700" fill="#17150F">59</text></svg><span class="lbl">Overall</span></div>
+    <div class="ring"><svg width="112" height="112" viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" fill="none" stroke="#EEE9DF" stroke-width="10"/><circle cx="60" cy="60" r="52" fill="none" stroke="#15803D" stroke-width="10" stroke-linecap="round" stroke-dasharray="290.8 326.7" transform="rotate(-90 60 60)"/><text x="60" y="62" text-anchor="middle" font-size="30" font-weight="700" fill="#17150F">89</text></svg><span class="lbl">AI readability</span></div>
+    <div class="ring"><svg width="112" height="112" viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" fill="none" stroke="#EEE9DF" stroke-width="10"/><circle cx="60" cy="60" r="52" fill="none" stroke="#B91C1C" stroke-width="10" stroke-linecap="round" stroke-dasharray="45.7 326.7" transform="rotate(-90 60 60)"/><text x="60" y="62" text-anchor="middle" font-size="30" font-weight="700" fill="#17150F">14</text></svg><span class="lbl">AI visibility</span></div>
+    <div style="flex:1;min-width:260px">
+      <div><span class="chip">Projected after fixes: 59 → <span class="up">87</span> · +28 pts</span></div>
+      <p class="verdict"><b>The invisible-but-readable page.</b> A browsing AI understands it perfectly and extraction is clean — yet it ranks nowhere for its own category, so AI search engines never inherit it as a citable source.</p>
+    </div>
+  </div>
+</div>
+<h2>Fix today</h2>
+<div class="card"><div class="fixno"><span class="n">1</span><div><div class="f-title">Not in top-10 for “web animation benchmark” <span class="sev hi">high</span></div>
+<p class="ev"><b>Evidence:</b> TinyFish Search top-10 is dominated by www.mdpi.com (#1), motion.dev (#2), www.reddit.com (#3), gsap.com (#4). This page does not appear — AI search engines inherit this ordering when citing sources.</p>
+<p class="fx"><b>Fix:</b> Put “web animation benchmark” (or a close variant) in the &lt;title&gt;, H1, first paragraph and one H2; add an FAQ answering the question behind the query; interlink from the two highest-authority pages.</p>
+<span class="impact">~ +16 pts overall</span></div></div></div>
+<div class="card"><div class="fixno"><span class="n">2</span><div><div class="f-title">Site not found for brand query “physera” <span class="sev hi">high</span></div>
+<p class="ev"><b>Evidence:</b> A search for the site's own brand token surfaced no page from physera.ai in the top 10 — weak indexing or brand signals.</p>
+<p class="fx"><b>Fix:</b> Ensure the brand string appears in &lt;title&gt;, H1, JSON-LD Organization name; link from homepage nav; submit in Search Console.</p>
+<span class="impact">~ +12 pts overall</span></div></div></div>
+
+<h2>Can AI crawlers read this page?</h2>
+<div class="card"><table>
+<tr><th>System</th><th>Role</th><th style="text-align:center">Access</th></tr>
+<tr><td>OpenAI (ChatGPT search/chat)</td><td>search + user-initiated</td><td class="ok" style="text-align:center">✓ allowed</td></tr>
+<tr><td>Anthropic (Claude)</td><td>search + assistants</td><td class="ok" style="text-align:center">✓ allowed</td></tr>
+<tr><td>Perplexity</td><td>answer engine</td><td class="ok" style="text-align:center">✓ allowed</td></tr>
+<tr><td>Google (Gemini / AI Overviews)</td><td>grounding data</td><td class="ok" style="text-align:center">✓ allowed</td></tr>
+<tr><td>Meta (Meta AI)</td><td>training + assistants</td><td class="ok" style="text-align:center">✓ allowed</td></tr>
+<tr><td>ByteDance / CC / Apple</td><td>other AI crawlers</td><td class="ok" style="text-align:center">✓ allowed</td></tr>
+</table><p class="kv" style="margin-top:10px">robots.txt opens the door to all 12 major AI crawlers — visibility loss here is <i>ranking</i>, not access.</p></div>
+<h2>Findings, prioritized</h2>
+<div class="card"><span class="sev me">medium</span><div class="f-title">Machine-readable structure · No H1 survives extraction</div>
+<p class="ev"><b>Evidence:</b> The extracted HTML contains no &lt;h1&gt; — answer engines use it to anchor what the page is about.</p>
+<p class="fx"><b>Fix:</b> Make the page headline an &lt;h1&gt; containing the primary keyword, exactly once.</p>
+<span class="impact">~ +3 pts</span></div>
+<div class="card"><span class="sev me">medium</span><div class="f-title">Search visibility · Materially thinner than the pages outranking it</div>
+<p class="ev"><b>Evidence:</b> Pages above it carry 8,445 words / 16 H2 sections (median of the top 2, fetched live: www.mdpi.com, motion.dev); this page extracts 3,650 words / 14 H2s. Depth is a proxy for answer completeness.</p>
+<p class="fx"><b>Fix:</b> Add ~4,795 words covering the sub-questions the leaders answer in their 16 sections — and ship an FAQ block; pages with FAQPage schema are disproportionately lifted into AI answers.</p>
+<span class="impact">~ +5 pts</span></div>
+<div class="card"><span class="sev me">medium</span><div class="f-title">Search visibility · Title/URL miss part of the target query</div>
+<p class="ev"><b>Evidence:</b> Query terms absent from the page's title and URL: benchmark, web.</p>
+<p class="fx"><b>Fix:</b> Work these terms into the &lt;title&gt; and H1 naturally.</p>
+<span class="impact">~ +3 pts</span></div>
+<div class="card"><span class="sev lo">low</span><div class="f-title">Search visibility · Meta description length off the display window</div>
+<p class="ev"><b>Evidence:</b> Description is 58 chars (ideal 140–160): “Evaluating Frontier Models on Web Animation Reconstruction”.</p>
+<p class="fx"><b>Fix:</b> Rewrite to 140–160 chars: what the page answers + one differentiator + a verb.</p>
+<span class="impact">~ +1 pt</span></div>
+<div class="card"><span class="sev in">info</span><div class="f-title">Authority &amp; provenance · No llms.txt (opportunity)</div>
+<p class="ev"><b>Evidence:</b> No /llms.txt found (HTTP 404) — the emerging convention AI tools use to fetch a curated, markdown map of a site.</p>
+<p class="fx"><b>Fix:</b> Publish /llms.txt listing key pages in markdown with one-line descriptions.</p>
+<span class="impact">~ +1 pt</span></div>
+<div class="card"><span class="sev in">info</span><div class="f-title">AI readability · A browsing AI understands the page</div>
+<p class="ev"><b>Evidence:</b> Agent's one-line read: “A research benchmark called Animation Bench by Physera that evaluates how well frontier multimodal coding agents (GPT-6 Astra, Claude Fable…”. Key facts: 48 real-world web animation tasks from 32 live sites · 192 reconstructions · motion consistency (0.38–0.47) lags visual similarity (0.63–0.71) · GPT-6 Astra ranked first at 0.594.</p>
+<p class="fx"><b>Keep it this way:</b> the opening screen is this clear; make sure key facts stay in static text.</p></div>
+<h2>Measured data</h2>
+<div class="card"><div class="f-title">TinyFish Fetch — what an AI extraction layer sees</div>
+<p class="kv">Extracted <b>3,650 words</b> / 29,509 chars of markdown · language en · author Physera</p>
+<p class="kv">Title: <code>Animation Bench | Physera</code> · Description (58 chars): <code>Evaluating Frontier Models on Web Animation Reconstruction</code></p>
+<p class="kv">Structure in extracted HTML: 0 H1 · 14 H2 · 13 H3 · 118 &lt;p&gt; · 6 lists · 8 tables</p>
+<p class="kv">Semantic landmarks: main, article, section, table, figure, summary, details · boilerplate-lines 4%</p>
+<p class="kv">GEO signals: <b>8</b> sentences with concrete stats · <b>4</b> question-phrased headings · longest paragraph 94 words</p></div>
+<div class="card"><div class="f-title">Extraction gap (HTML view)</div>
+<p class="kv">Raw server HTML carries <b>715</b> content tags (&lt;p&gt;/&lt;h&gt;/&lt;li&gt;/&lt;td&gt;) while the browser-rendered extraction saw <b>132</b> content elements — the gap is what only renders via JavaScript. Here: <b>0 H1 lost</b> in extraction (raw origin has 1) — worth fixing at the source.</p></div>
+<div class="card"><div class="f-title">Origin HTML — what search &amp; AI crawlers get</div>
+<p class="kv">HTTP 200 · 414,060 bytes · content-type <code>text/html; charset=utf-8</code> · no redirect</p>
+<p class="kv">canonical: <code>https://physera.ai/research/animation</code> · meta robots: <code>index, follow</code></p>
+<p class="kv">og:title present · og:image present · JSON-LD: 1 block (Organization, WebSite)</p>
+<p class="kv">Raw HTML headings: 1 H1 · 14 H2 · images 231 total, 0 missing alt · hreflang 0</p></div>
+<div class="card"><div class="f-title">robots.txt &amp; llms.txt</div>
+<p class="kv">AI crawlers allowed on this path: GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-Web, anthropic-ai, PerplexityBot, Google-Extended, Bytespider, CCBot, Applebot-Extended, meta-externalagent</p>
+<p class="kv">Sitemaps declared: 1 · llms.txt: <b>not found</b> (HTTP 404)</p></div>
+<div class="card"><div class="f-title">TinyFish Search — visibility for the target query</div>
+<p class="kv">“web animation benchmark” → <b>not in top-10</b> · “web animation benchmark physera” → <b>not in top-10</b> · “physera” → <b>not in top-10</b></p>
+<table>
+<tr><th>#</th><th>Who outranks / ranks alongside</th><th>URL</th></tr>
+<tr><td>1</td><td>A Cross-Device and Cross-OS Benchmark of Modern Web … <span class="mono" style="color:#8A8578">(www.mdpi.com)</span></td><td class="mono">www.mdpi.com/2313-433X/12/1/45</td></tr>
+<tr><td>2</td><td>The Web Animation Performance Tier List | Motion Magazine <span class="mono" style="color:#8A8578">(motion.dev)</span></td><td class="mono">motion.dev/magazine/web-animation-performance-tier-list</td></tr>
+<tr><td>3</td><td>The Web Animation Performance Tier List — Motion Blog <span class="mono" style="color:#8A8578">(www.reddit.com)</span></td><td class="mono">reddit.com/r/javascript/comments/1opwrvx/…</td></tr>
+<tr><td>4</td><td>JavaScript Animation Speed Test <span class="mono" style="color:#8A8578">(gsap.com)</span></td><td class="mono">gsap.com/js/speed.html</td></tr>
+<tr><td>5</td><td>Master Web Animations in 2 Hours <span class="mono" style="color:#8A8578">(www.youtube.com)</span></td><td class="mono">youtube.com/watch?v=AW1yfBKRMKc</td></tr>
+</table></div>
+<div class="card"><div class="f-title">TinyFish Fetch — competitor benchmark (fetched live)</div>
+<table>
+<tr><th>#</th><th>Competitor page</th><th style="text-align:right">Words extracted</th><th style="text-align:right">H2 sections</th></tr>
+<tr><td>1</td><td>www.mdpi.com/2313-433X/12/1/45</td><td style="text-align:right"><b>8,445</b></td><td style="text-align:right">16</td></tr>
+<tr><td>2</td><td>motion.dev/magazine/web-animation-performance-tier-list</td><td style="text-align:right">3,761</td><td style="text-align:right">2</td></tr>
+<tr><td>—</td><td><b>This page</b></td><td style="text-align:right">3,650</td><td style="text-align:right">14</td></tr>
+</table></div>
+<div class="card"><div class="f-title">TinyFish Agent — browsing-AI comprehension probe</div>
+<p class="kv">Page understood: <b class="ok">yes</b> · js_required: <b>no</b> · rendered_chars 8,700 · nav_links 5</p>
+<p class="quote">“A research benchmark called Animation Bench by Physera that evaluates how well frontier multimodal coding agents (GPT-6 Astra, Claude Fable 5.1, GPT-6 Sol, Claude Opus 5.5) can reconstruct web page animations versus static screenshots.”</p></div>
+
+<div class="footer">
+<b>How this audit works.</b> <a href="https://docs.tinyfish.ai/fetch-api">TinyFish Fetch</a> reads the live page twice (markdown + semantic HTML) exactly as an AI tool would; raw origin HTML, robots.txt and llms.txt are checked for what search/AI crawlers are told; <a href="https://docs.tinyfish.ai/search-api">TinyFish Search</a> shows where the page stands for the target query and who outranks it; one <a href="https://docs.tinyfish.ai/agent-api">TinyFish Agent</a> run opens the page in a real browser to test whether a browsing AI can understand it.
+<br><br>This is a rendered sample produced by <a href="https://github.com/arjunkshah12345-hash/seo-page-auditor">SEO Page Auditor</a> (repo) · <a href="https://github.com/arjunkshah12345-hash/seo-page-auditor/blob/main/demo/physera-animation-bench.md">raw Markdown report</a> · <a href="https://github.com/arjunkshah12345-hash/seo-page-auditor/blob/main/demo/physera-animation-bench.json">machine-readable JSON</a>.
+</div>
+</div>
+</body>
+</html>
